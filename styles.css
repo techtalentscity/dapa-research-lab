@@ -51,23 +51,26 @@ nav ul li a {
     border-radius: 5px;
 }
 
-section {
-    padding: 30px;
-}
-
 .about-section {
     background-color: #f0f8ff;
     text-align: center;
+    padding: 30px;
 }
 
 .mission-section {
     background-color: #d0eaff;
     text-align: center;
+    padding: 30px;
+}
+
+.research-section {
+    background-color: #eaf6ff;
+    padding: 30px;
 }
 
 .research-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
 
@@ -79,21 +82,25 @@ section {
     text-align: center;
 }
 
-footer {
-    background-color: #003d73;
+.apply-btn {
+    display: inline-block;
+    margin-top: 10px;
+    background-color: #0078b8;
     color: white;
-    text-align: center;
-    padding: 10px 0;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
 }
 
 /* Responsive Styles */
 @media (max-width: 768px) {
     .research-grid {
-        grid-template-columns: 1fr; /* Stack the research cards in one column */
+        grid-template-columns: 1fr; /* Stack research cards in one column */
     }
 
     .hero-section h1 {
-        font-size: 2rem; /* Adjust font size for smaller screens */
+        font-size: 2rem;
     }
 
     .hero-section p {
