@@ -2,113 +2,117 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    color: #333;
+    line-height: 1.6;
 }
 
-header {
-    background-color: #003d73;
+h1, h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+/* Navigation */
+.navbar {
+    background: #003366;
     color: white;
-    padding: 10px 20px;
+    padding: 1rem 0;
+    text-align: center;
 }
 
-nav ul {
-    list-style: none;
+.nav-links {
     display: flex;
-    justify-content: flex-end;
-    gap: 15px;
+    justify-content: center;
+    gap: 1rem;
+    list-style: none;
     margin: 0;
+    padding: 0;
 }
 
-nav ul li a {
+.nav-links a {
     color: white;
     text-decoration: none;
     font-weight: bold;
 }
 
+/* Hero Section */
 .hero-section {
-    background: linear-gradient(to right, #003d73, #0078b8);
+    background: linear-gradient(to right, #00509e, #003366);
     color: white;
-    padding: 50px;
+    padding: 2rem 1rem;
     text-align: center;
-}
-
-.hero-section h1 {
-    font-size: 3rem;
-    margin-bottom: 10px;
-}
-
-.hero-section p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
 }
 
 .hero-btn {
-    background-color: #ff9800;
-    color: white;
+    background: white;
+    color: #003366;
+    border: none;
     padding: 10px 20px;
-    text-decoration: none;
-    font-size: 1.1rem;
+    font-size: 1rem;
     border-radius: 5px;
+    text-decoration: none;
+    margin-top: 1rem;
+    display: inline-block;
 }
 
-.about-section {
-    background-color: #f0f8ff;
-    text-align: center;
-    padding: 30px;
+/* Sections */
+.section {
+    padding: 2rem 1rem;
 }
 
-.mission-section {
-    background-color: #d0eaff;
-    text-align: center;
-    padding: 30px;
+.about {
+    background: #eaf6ff;
 }
 
-.research-section {
-    background-color: #eaf6ff;
-    padding: 30px;
+.mission {
+    background: #ffedcc;
 }
 
+.research {
+    background: #dcefff;
+}
+
+.contact {
+    background: #f3f3f3;
+}
+
+/* Research Grid */
 .research-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 1rem;
+    margin-top: 2rem;
 }
 
-.research-card {
-    background-color: white;
-    border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+.research-box {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
 .apply-btn {
-    display: inline-block;
-    margin-top: 10px;
-    background-color: #0078b8;
+    background: #00509e;
     color: white;
-    padding: 10px 15px;
-    text-decoration: none;
+    border: none;
+    padding: 8px 16px;
     border-radius: 5px;
-    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 1rem;
 }
 
-/* Responsive Styles */
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: #003366;
+    color: white;
+    margin-top: 2rem;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
     .research-grid {
-        grid-template-columns: 1fr; /* Stack research cards in one column */
-    }
-
-    .hero-section h1 {
-        font-size: 2rem;
-    }
-
-    .hero-section p {
-        font-size: 1rem;
-    }
-
-    .hero-btn {
-        padding: 8px 16px;
-        font-size: 0.9rem;
+        grid-template-columns: 1fr;
     }
 }
