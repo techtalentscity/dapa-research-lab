@@ -1,0 +1,121 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(120deg, #003d73, #0078b8);
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.hero-btn {
+    background: #ffffff;
+    color: #003d73;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s, color 0.3s;
+}
+
+.hero-btn:hover {
+    background: #003d73;
+    color: white;
+}
+
+/* About Section */
+.about-section {
+    background-color: #f0f8ff;
+    padding: 50px 20px;
+}
+
+.about-section h2 {
+    color: #003d73;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Mission Section */
+.mission-section {
+    background-color: #d0eaff;
+    padding: 50px 20px;
+}
+
+.mission-section h2 {
+    color: #005b99;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Research Section */
+.research-section {
+    background-color: #eaf6ff;
+    padding: 50px 20px;
+}
+
+.research-section .section-title {
+    text-align: center;
+    color: #003d73;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.research-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.research-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.research-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.research-card h3 {
+    color: #003d73;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.research-card p {
+    color: #555555;
+    font-size: 1rem;
+}
+
+/* Footer */
+.footer {
+    background-color: #003d73;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
