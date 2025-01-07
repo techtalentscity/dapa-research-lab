@@ -1,153 +1,241 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DEPA Research Lab</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-
+        /* Reset & Base Styling */
         body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
             line-height: 1.6;
             color: #333;
         }
 
-        header {
-            background: #333;
-            color: #fff;
-            padding: 10px 20px;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 24px;
-        }
-
-        nav {
-            text-align: right;
-        }
-
-        nav a {
-            color: #fff;
-            margin: 0 15px;
+        a {
             text-decoration: none;
-            font-weight: bold;
+            color: inherit;
         }
 
-        nav a:hover {
-            text-decoration: underline;
+        ul {
+            list-style: none;
+            padding: 0;
         }
 
-        section {
-            padding: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
+        /* Navigation Styling */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #1d3557;
+            padding: 1rem 2rem;
+            color: white;
         }
 
-        #about {
-            margin-bottom: 40px;
+        .navbar ul {
+            display: flex;
         }
 
-        #about h2 {
-            margin-bottom: 10px;
+        .navbar li {
+            margin: 0 15px;
         }
 
-        #about p {
-            margin-bottom: 10px;
+        .navbar a:hover {
+            color: #a8dadc;
         }
 
+        /* Hero Section */
+        .hero {
+            background: url('https://via.placeholder.com/1400x800') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 6rem 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .hero button {
+            padding: 1rem 2rem;
+            background-color: #457b9d;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 1rem;
+            border-radius: 5px;
+        }
+
+        .hero button:hover {
+            background-color: #1d3557;
+        }
+
+        /* Section Styling */
+        .section {
+            padding: 4rem 2rem;
+        }
+
+        .about,
+        .mission {
+            background-color: #f1faee;
+            text-align: center;
+        }
+
+        .research {
+            background-color: #e63946;
+            color: white;
+        }
+
+        /* Research Boxes */
         .research-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            display: flex;
+            flex-wrap: wrap;
             gap: 20px;
-            padding: 20px;
+            justify-content: center;
+            margin-top: 2rem;
         }
 
         .research-box {
-            background-color: #f5f5f5;
-            padding: 20px;
-            border-radius: 8px;
+            background: white;
+            color: #1d3557;
+            padding: 1.5rem;
+            border-radius: 10px;
+            width: calc(33.33% - 20px);
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .research-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Contact Section */
+        .contact {
+            background-color: #457b9d;
+            color: white;
             text-align: center;
         }
 
-        .research-box h3 {
-            margin-bottom: 10px;
+        .contact a {
+            color: #a8dadc;
+            font-weight: bold;
         }
 
-        footer {
+        /* Footer */
+        .footer {
             text-align: center;
-            background: #333;
-            color: #fff;
-            padding: 10px 20px;
-            margin-top: 40px;
+            padding: 1rem;
+            background-color: #1d3557;
+            color: white;
         }
 
-        footer p {
-            margin: 0;
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .research-box {
+                width: calc(50% - 20px);
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .research-box {
+                width: 100%;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
+
 <body>
-    <header>
-        <div>
-            <h1>DEPA Research Lab</h1>
-            <nav>
-                <a href="#about">About</a>
-                <a href="#research">Research</a>
-                <a href="#mission">Mission</a>
-                <a href="#contact">Contact</a>
-            </nav>
-        </div>
-    </header>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">DEPA Research Lab</div>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#mission">Mission</a></li>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-    <section id="about">
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Welcome to DEPA Research Lab</h1>
+        <p>Driving innovation at the intersection of technology and impact.</p>
+        <button onclick="document.location='#about'">Learn More</button>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
         <h2>About Us</h2>
-        <p><strong>Dr. Kofi Nyarko</strong></p>
-        <p>Director</p>
-        <p>Department of Electrical and Computer Engineering</p>
-        <p><a href="mailto:kofi.nyarko@morgan.edu">kofi.nyarko@morgan.edu</a></p>
-        <p>Welcome to the Data Engineering and Predictive Analytics Lab (DEPA Lab) at Morgan State University, led by Dr. Kofi Nyarko. Our mission is to unravel the intricacies embedded within extensive data sets derived from complex engineering systems and provide transformative insights.</p>
+        <p>Dr. Kofi Nyarko</p>
+        <p>Director, Department of Electrical and Computer Engineering</p>
+        <p>Email: <a href="mailto:kofi.nyarko@morgan.edu">kofi.nyarko@morgan.edu</a></p>
+        <p>Welcome to the Data Engineering and Predictive Analytics Lab at Morgan State University, led by Dr. Kofi Nyarko. Our mission is to unravel the intricacies embedded within extensive data sets derived from complex engineering systems and provide transformative insights.</p>
     </section>
 
-    <section id="mission">
+    <!-- Mission Section -->
+    <section id="mission" class="section mission">
         <h2>Our Mission</h2>
-        <p>The DEPA Lab is an innovative and inclusive hub for research and development in the realm of data engineering and predictive analytics. We work at the forefront of technology, developing high-performance machine learning algorithms and models for near real-time collection, transformation, analysis, prediction, and visualization of multivariate data. Our ultimate goal is to provide robust decision support systems.</p>
+        <p>The DEPA Lab is an innovative hub for research and development in data engineering and predictive analytics. We provide transformative insights through cutting-edge technologies.</p>
     </section>
 
-    <section id="research">
+    <!-- Research Section -->
+    <section id="research" class="section research">
         <h2>Research Areas</h2>
         <div class="research-grid">
             <div class="research-box">
-                <h3>Machine Learning, Analysis, Modeling & Simulation</h3>
-                <p>We create and optimize machine learning models that reflect real-world scenarios, enhancing system performance and response times.</p>
+                <h3>Machine Learning</h3>
+                <p>We create optimized models that enhance system performance.</p>
             </div>
             <div class="research-box">
-                <h3>Information, Data Analytics, Software Systems</h3>
-                <p>Our team develops advanced data aggregation, analysis, and visualization software systems that boost decision support.</p>
+                <h3>Data Analytics</h3>
+                <p>Our team develops advanced analytics and visualization systems.</p>
             </div>
             <div class="research-box">
                 <h3>Test & Evaluation</h3>
-                <p>We develop processes and systems to facilitate robust automated test and evaluation activities.</p>
+                <p>We build robust automated test and evaluation systems.</p>
             </div>
             <div class="research-box">
-                <h3>Embedded Processing & IoT</h3>
-                <p>We focus on developing algorithms and systems suited for IoT and general applications. Our work addresses the challenges of real-time data analysis and improves system response times.</p>
+                <h3>Embedded Processing</h3>
+                <p>Real-time IoT algorithms improving system responsiveness.</p>
             </div>
             <div class="research-box">
                 <h3>Visual Data Analytics</h3>
-                <p>Our lab innovates in the area of user-adaptable visual data analytics, enhancing situational awareness across infrastructures.</p>
+                <p>Adaptable solutions enhancing situational awareness.</p>
             </div>
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2025 DEPA Research Lab. All rights reserved.</p>
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <h2>Contact Us</h2>
+        <p>Email us at <a href="mailto:kofi.nyarko@morgan.edu">kofi.nyarko@morgan.edu</a> to learn more about our research or collaboration opportunities.</p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2025 DEPA Research Lab. All rights reserved.</p>
     </footer>
 </body>
+
 </html>
