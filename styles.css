@@ -3,6 +3,8 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
 }
 
 h1, h2 {
@@ -10,18 +12,22 @@ h1, h2 {
     margin-bottom: 1rem;
 }
 
-/* Navigation */
+/* Navigation Bar */
 .navbar {
     background: #003366;
     color: white;
     padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
     text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .nav-links {
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    gap: 2rem;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -31,31 +37,64 @@ h1, h2 {
     color: white;
     text-decoration: none;
     font-weight: bold;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ffd700;
 }
 
 /* Hero Section */
 .hero-section {
     background: linear-gradient(to right, #00509e, #003366);
     color: white;
-    padding: 2rem 1rem;
+    padding: 5rem 1rem;
     text-align: center;
 }
 
+.hero-section h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero-section p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+}
+
 .hero-btn {
-    background: white;
+    background: #ffd700;
     color: #003366;
     border: none;
     padding: 10px 20px;
     font-size: 1rem;
     border-radius: 5px;
     text-decoration: none;
-    margin-top: 1rem;
-    display: inline-block;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
 }
 
-/* Sections */
+.hero-btn:hover {
+    background: #ffcc33;
+}
+
+/* Section Styles */
 .section {
-    padding: 2rem 1rem;
+    padding: 4rem 1rem;
+    text-align: center;
+}
+
+.about,
+.mission,
+.contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 1rem;
+    text-align: center;
 }
 
 .about {
@@ -63,15 +102,16 @@ h1, h2 {
 }
 
 .mission {
-    background: #ffedcc;
-}
-
-.research {
-    background: #dcefff;
+    background: #fff3e6;
 }
 
 .contact {
-    background: #f3f3f3;
+    background: #e6f4f1;
+}
+
+.section-content {
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 /* Research Grid */
@@ -79,40 +119,100 @@ h1, h2 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
-    margin-top: 2rem;
+    padding: 2rem 0;
 }
 
-.research-box {
-    background: white;
-    padding: 1rem;
+.research-item {
+    background: #ffffff;
+    border: 1px solid #ddd;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    text-align: center;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.apply-btn {
-    background: #00509e;
+.research-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.research-item h3 {
+    font-size: 1.25rem;
+    color: #003366;
+    margin-bottom: 1rem;
+}
+
+.research-item p {
+    margin-bottom: 1rem;
+}
+
+.research-item .apply-btn {
+    background: #003366;
     color: white;
     border: none;
     padding: 8px 16px;
+    font-size: 0.9rem;
     border-radius: 5px;
     text-decoration: none;
-    display: inline-block;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.research-item .apply-btn:hover {
+    background: #00509e;
+}
+
+/* Buttons for Contact Section */
+.contact-btn {
+    background: #003366;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    text-decoration: none;
     margin-top: 1rem;
+    display: inline-block;
+    transition: background 0.3s ease;
+}
+
+.contact-btn:hover {
+    background: #00509e;
 }
 
 /* Footer */
 footer {
-    text-align: center;
-    padding: 1rem;
     background: #003366;
     color: white;
+    text-align: center;
+    padding: 1rem 0;
     margin-top: 2rem;
+    font-size: 0.9rem;
 }
 
-/* Responsive */
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .research-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 @media (max-width: 768px) {
     .research-grid {
         grid-template-columns: 1fr;
+    }
+
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-section p {
+        font-size: 1rem;
+    }
+
+    .hero-btn {
+        padding: 10px 15px;
+        font-size: 0.9rem;
     }
 }
