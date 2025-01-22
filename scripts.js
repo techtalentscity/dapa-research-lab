@@ -14,16 +14,20 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+    // Fade-in Animation Debugging
+    const fadeElements = document.querySelectorAll('.fade-in');
+    fadeElements.forEach(element => {
+        element.style.opacity = '1'; // Ensure visibility
+        element.style.transform = 'none'; // Reset transform
+    });
+
     // Hero Heading Animation
     const heroHeading = document.querySelector(".hero h1");
-
-    // Trigger animation on page load
     heroHeading.style.animation = "none";
     setTimeout(() => {
         heroHeading.style.animation = "slideInOut 5s infinite";
     }, 10);
 });
-
 
     // Active Link Highlighting
     const sections = document.querySelectorAll('section');
