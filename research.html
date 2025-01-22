@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research - DEPA Research Lab</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <div id="header-placeholder"></div>
+
+    <!-- Research Section -->
+    <section id="research" class="research-section">
+        <div class="container">
+            <h2>Research Areas</h2>
+            <div class="research-grid">
+                <div class="research-item">
+                    <h3>Machine Learning</h3>
+                    <p>Optimizing algorithms for real-world decision support and autonomous systems.</p>
+                    <a href="#" class="apply-btn">Apply</a>
+                </div>
+                <div class="research-item">
+                    <h3>Computer Vision</h3>
+                    <p>Automating traffic data analysis, pose estimation, and scene perception for diverse applications.</p>
+                    <a href="#" class="apply-btn">Apply</a>
+                </div>
+                <div class="research-item">
+                    <h3>IoT Data Analytics</h3>
+                    <p>Developing pipelines for dynamic visualization and real-time analytics.</p>
+                    <a href="#" class="apply-btn">Apply</a>
+                </div>
+                <div class="research-item">
+                    <h3>Ethical AI Framework</h3>
+                    <p>Advancing trustworthy and unbiased AI systems while addressing algorithmic bias.</p>
+                    <a href="#" class="apply-btn">Learn More</a>
+                </div>
+                <div class="research-item">
+                    <h3>Human-Computer Interaction</h3>
+                    <p>Creating interactive visualization tools for enhanced situational awareness.</p>
+                    <a href="#" class="apply-btn">Apply</a>
+                </div>
+                <div class="research-item">
+                    <h3>Autonomous Systems</h3>
+                    <p>Developing robust algorithms for real-time navigation in challenging environments.</p>
+                    <a href="#" class="apply-btn">Apply</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Dynamic Header and Footer Scripts -->
+    <script>
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('header-placeholder').innerHTML = data);
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer-placeholder').innerHTML = data);
+    </script>
+</body>
+</html>

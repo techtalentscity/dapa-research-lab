@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEPA Research Lab</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Placeholder for the header -->
+    <div id="header-placeholder"></div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="hero-overlay">
+            <div class="hero-content">
+                <h1>Welcome to DEPA Research Lab</h1>
+                <p>Driving innovation at the intersection of technology and impact.</p>
+                <a href="#research-areas" class="hero-btn">Explore Our Research</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lab Overview Section -->
+    <section id="overview" class="overview-section">
+        <div class="container">
+            <h2>Lab Overview</h2>
+            <div class="overview-content">
+                <div class="overview-text">
+                    <p>At DEPA Research Lab, we focus on gaining insights and automating complex systems through applied research in <strong>Computer Vision</strong>, <strong>Machine Learning</strong>, and other cutting-edge AI techniques.</p>
+                    <ul>
+                        <li>Developing flexible data-gathering and fusion techniques from heterogeneous sources.</li>
+                        <li>Creating models and algorithms for general and embedded systems.</li>
+                        <li>Building dynamic visualization engines for advanced user interaction.</li>
+                    </ul>
+                </div>
+                <div class="overview-image">
+                    <img src="images/depa-lab.webp" alt="Lab Discussion">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Research Areas Section -->
+    <section id="research-areas" class="research-areas-section">
+        <div class="container">
+            <h2>Core Research Areas</h2>
+            <div class="grid">
+                <div class="area">
+                    <h3>IoT Data Analytics</h3>
+                    <p>Analyze and visualize complex IoT networks for actionable insights.</p>
+                </div>
+                <div class="area">
+                    <h3>Cybersecurity</h3>
+                    <p>Secure networks through advanced analytics and visualization techniques.</p>
+                </div>
+                <div class="area">
+                    <h3>Machine Learning</h3>
+                    <p>Develop models for decision support, simulation, and predictive analytics.</p>
+                </div>
+                <div class="area">
+                    <h3>Computer Vision</h3>
+                    <p>Enhance decision-making with advanced visual analytics and object detection.</p>
+                </div>
+                <div class="area">
+                    <h3>Interactive Visualization</h3>
+                    <p>Use virtual, mixed, and augmented reality to visualize data effectively.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Computer Vision Applications Section -->
+    <section id="cv-applications" class="cv-applications-section">
+        <div class="container">
+            <h2>Computer Vision Applications</h2>
+            <div class="grid">
+                <div class="application">
+                    <img src="images/pose-estimation.webp" alt="Pose Estimation">
+                    <h3>Pose Estimation</h3>
+                    <p>Track and identify objects in challenging environments using multi-layer vision algorithms.</p>
+                </div>
+                <div class="application">
+                    <img src="images/traffic-analytics.webp" alt="Traffic Analytics">
+                    <h3>Traffic Analytics</h3>
+                    <p>Automate vehicle and pedestrian tracking using real-time video analysis.</p>
+                </div>
+                <div class="application">
+                    <img src="images/scene-perception.webp" alt="Scene Perception">
+                    <h3>Scene Perception</h3>
+                    <p>Use LIDAR to segment regions and detect changes in real-time.</p>
+                </div>
+                <div class="application">
+                    <img src="images/wheelchair.webp" alt="Self-Navigating Wheelchair">
+                    <h3>Self-Navigating Wheelchair</h3>
+                    <p>Enable urban navigation for individuals with disabilities using vision sensors.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts to load dynamic header and footer -->
+    <script>
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('header-placeholder').innerHTML = data)
+            .catch(error => console.error('Error loading header:', error));
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer-placeholder').innerHTML = data)
+            .catch(error => console.error('Error loading footer:', error));
+    </script>
+</body>
+</html>
