@@ -84,19 +84,23 @@ document.addEventListener("DOMContentLoaded", () => {
         scrollTopBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
     });
 
-    // Dynamic Team Members
+    // Team Members Array
     const teamMembers = [
         { name: "Dr. Kofi Nyarko", role: "Director of DEPA Lab", image: "images/nyarko.jpg" },
         { name: "Jane Doe", role: "Senior Research Assistant", image: "images/nyarko.jpg" },
         { name: "John Smith", role: "Data Scientist", image: "images/nyarko.jpg" },
-        ...Array.from({ length: 17 }, (_, i) => ({
-            name: `Team Member ${i + 4}`,
-            role: "Research Specialist",
-            image: "images/nyarko.jpg"
-        }))
     ];
 
-    // Populate Team Carousel
+    // Add placeholders for 17 additional members
+    for (let i = 4; i <= 20; i++) {
+        teamMembers.push({
+            name: `Team Member ${i}`,
+            role: "Research Specialist",
+            image: "images/nyarko.jpg",
+        });
+    }
+
+    // Populate the Team Carousel
     if (teamCarousel) {
         teamMembers.forEach(member => {
             const cardHTML = `
