@@ -8,22 +8,22 @@
     <script defer src="scripts.js"></script>
 </head>
 <body>
-    
-<header class="main-header">
-    <a href="#hero" class="logo">DEPA Research Lab</a>
-    <nav class="nav">
-        <ul class="nav-links">
-            <li><a href="#about-section">About</a></li>
-            <li><a href="#research">Research</a></li>
-            <li><a href="#innovation">Innovation</a></li>
-            <li><a href="#events">Events & News</a></li>
-            <li><a href="#team">Team</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-</header>
+    <!-- Header -->
+    <header class="main-header">
+        <a href="#hero" class="logo">DEPA Research Lab</a>
+        <button class="menu-toggle" aria-label="Toggle Menu">☰</button>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#innovation">Innovation</a></li>
+                <li><a href="#events">Events & News</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  
     <!-- Hero Section -->
     <section id="hero" class="hero">
         <div class="container">
@@ -33,39 +33,35 @@
         </div>
     </section>
 
-<section id="about" class="about-section">
-    <div class="container">
-        <!-- About Us -->
-        <h2 class="title">About DEPA Lab</h2>
-        <p class="about-text">
-            The Data Engineering and Predictive Analytics Lab (DEPA Lab) at Morgan State University, led by Dr. Kofi Nyarko,
-            is dedicated to unraveling the intricacies of complex systems and providing transformative insights. DEPA Lab
-            focuses on applied research in Computer Vision, Machine Learning, and Artificial Intelligence Techniques.
-        </p>
-
-        <!-- Mission and Vision -->
-        <div class="card-container">
-            <div class="info-card">
-                <h3>Our Mission</h3>
-                <p>
-                    We develop innovative machine learning models and algorithms for near real-time data collection,
-                    transformation, analysis, prediction, and visualization. DEPA Lab promotes inclusivity and innovation
-                    in data engineering and predictive analytics.
-                </p>
-            </div>
-            <div class="info-card">
-                <h3>Our Vision</h3>
-                <p>
-                    The Center for Equitable AI and Machine Learning Systems (CEAMLS) facilitates the development and deployment
-                    of socially responsible and equitable AI systems, ensuring they benefit everyone while educating the public
-                    about their impacts on health, prosperity, and happiness.
-                </p>
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 class="title">About DEPA Lab</h2>
+            <p class="about-text">
+                The Data Engineering and Predictive Analytics Lab (DEPA Lab) at Morgan State University, led by Dr. Kofi Nyarko,
+                is dedicated to unraveling the intricacies of complex systems and providing transformative insights. DEPA Lab
+                focuses on applied research in Computer Vision, Machine Learning, and Artificial Intelligence Techniques.
+            </p>
+            <div class="card-container">
+                <div class="info-card">
+                    <h3>Our Mission</h3>
+                    <p>
+                        We develop innovative machine learning models and algorithms for near real-time data collection,
+                        transformation, analysis, prediction, and visualization. DEPA Lab promotes inclusivity and innovation
+                        in data engineering and predictive analytics.
+                    </p>
+                </div>
+                <div class="info-card">
+                    <h3>Our Vision</h3>
+                    <p>
+                        The Center for Equitable AI and Machine Learning Systems (CEAMLS) facilitates the development and deployment
+                        of socially responsible and equitable AI systems, ensuring they benefit everyone while educating the public
+                        about their impacts on health, prosperity, and happiness.
+                    </p>
+                </div>
             </div>
         </div>
-    </div>
-</section>
-
-
+    </section>
 
     <!-- Research Section -->
     <section id="research" class="section bg-light fade-in">
@@ -104,126 +100,79 @@
         </div>
     </section>
 
-    <!-- Innovation and Research Section -->
-<section id="innovation" class="section bg-light fade-in">
-    <div class="container">
-        <h2>Innovative Projects and Research Highlights</h2>
-        <p>At DEPA Research Lab, we are at the forefront of cutting-edge research, solving complex real-world challenges through interdisciplinary approaches. Explore some of our groundbreaking projects:</p>
-
-        <div class="grid">
-            <!-- Project 1 -->
-            <div class="card">
-                <h3>Self-Navigating Wheelchair</h3>
-                <p>Revolutionizing mobility for individuals with disabilities using vision sensors. This project ensures high-reliability transportation in dense urban environments, with successful pilot phases conducted at Baltimore Washington Airport.</p>
-                <a href="https://youtu.be/pB62REGywdQ" target="_blank" class="btn">Watch Video</a>
-            </div>
-
-            <!-- Project 2 -->
-            <div class="card">
-                <h3>Automated Traffic Data Analytics</h3>
-                <p>Leveraging computer vision to process video imagery from traffic cameras, enabling vehicle/pedestrian dynamics, counts, and type identification for smarter urban planning.</p>
-                <a href="#" class="btn">Learn More</a>
-            </div>
-
-            <!-- Project 3 -->
-            <div class="card">
-                <h3>Cyber Identity Reconciliation Engine (CIRE)</h3>
-                <p>Enhancing cybersecurity operations by reconciling cyber personas, identifying bad actors, and visualizing relationship networks for situational awareness with 92% accuracy.</p>
-                <a href="#" class="btn">Learn More</a>
-            </div>
-
-            <!-- Project 4 -->
-            <div class="card">
-                <h3>Equitable AI Framework</h3>
-                <p>Advancing socially responsible AI systems to address algorithmic bias and promote fairness, inclusivity, and transparency in AI research and applications.</p>
-                <a href="#" class="btn">Learn More</a>
-            </div>
-
-            <!-- Project 5 -->
-            <div class="card">
-                <h3>Autonomous Navigation</h3>
-                <p>Developing autonomous air and ground vehicles using advanced sensors like LIDAR, RealSense, and more, integrated with microcontrollers for robust navigation in challenging environments.</p>
-                <a href="#" class="btn">Learn More</a>
-            </div>
-
-            <!-- Project 6 -->
-            <div class="card">
-                <h3>IoT Data Visualization</h3>
-                <p>Creating dynamic IoT pipelines with machine learning integration, enabling anomaly detection and interactive visualization for enhanced network insights.</p>
-                <a href="#" class="btn">Learn More</a>
+    <!-- Innovation Section -->
+    <section id="innovation" class="section bg-light fade-in">
+        <div class="container">
+            <h2>Innovative Projects and Research Highlights</h2>
+            <p>At DEPA Research Lab, we are at the forefront of cutting-edge research, solving complex real-world challenges through interdisciplinary approaches. Explore some of our groundbreaking projects:</p>
+            <div class="grid">
+                <div class="card">
+                    <h3>Self-Navigating Wheelchair</h3>
+                    <p>Revolutionizing mobility for individuals with disabilities using vision sensors.</p>
+                    <a href="#" class="btn">Watch Video</a>
+                </div>
+                <div class="card">
+                    <h3>Automated Traffic Data Analytics</h3>
+                    <p>Leveraging computer vision for smarter urban planning.</p>
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+                <div class="card">
+                    <h3>Cyber Identity Reconciliation Engine (CIRE)</h3>
+                    <p>Enhancing cybersecurity operations by reconciling cyber personas.</p>
+                    <a href="#" class="btn">Learn More</a>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
+    <!-- Events Section -->
     <section id="events" class="section bg-light fade-in">
-    <div class="container">
-        <h2>Latest Events and News</h2>
-        <p>Stay updated with the latest happenings, publications, and events at DEPA Research Lab.</p>
-        <div class="grid">
-            <!-- Event 1 -->
-            <div class="card">
-                <h3>DEPA Lab Award</h3>
-                <p>DEPA Lab has been recognized for its groundbreaking research on equitable AI systems, fostering innovation in AI ethics and shaping policy frameworks for a fairer, more inclusive future.</p>
-                <a href="#" class="btn">Learn More</a>
-            </div>
-
-            <!-- Event 2 -->
-            <div class="card">
-                <h3>Publications</h3>
-                <p>DEPA Lab has made significant strides in advancing equitable AI systems, presenting groundbreaking research that addresses fairness, inclusivity, and transparency in artificial intelligence.</p>
-                <a href="#" class="btn">Read More</a>
-            </div>
-
-            <!-- Event 3 -->
-            <div class="card">
-                <h3>CEAMLS Symposium</h3>
-                <p>Join DEPA at the CEAMLS Symposium as we delve into groundbreaking advancements in machine learning and AI. This annual event showcases DEPA's commitment to driving progress in AI and ML technologies.</p>
-                <a href="#" class="btn">Register Now</a>
+        <div class="container">
+            <h2>Latest Events and News</h2>
+            <p>Stay updated with the latest happenings at DEPA Research Lab.</p>
+            <div class="grid">
+                <div class="card">
+                    <h3>DEPA Lab Award</h3>
+                    <p>Recognized for groundbreaking research on equitable AI systems.</p>
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+                <div class="card">
+                    <h3>Publications</h3>
+                    <p>Advancing fairness, inclusivity, and transparency in artificial intelligence.</p>
+                    <a href="#" class="btn">Read More</a>
+                </div>
+                <div class="card">
+                    <h3>CEAMLS Symposium</h3>
+                    <p>Join us for the annual symposium showcasing advancements in AI.</p>
+                    <a href="#" class="btn">Register Now</a>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section id="team" class="section fade-in">
-    <div class="container">
-        <h2>Meet Our Team</h2>
-        <p>Our diverse and talented team is committed to advancing research and innovation, solving real-world problems through technology.</p>
-
-        <!-- Team Carousel Wrapper -->
-        <div class="team-carousel-wrapper">
-            <button class="arrow left-arrow" aria-label="Scroll Left">❮</button>
-            <div class="team-carousel">
-                <!-- Placeholder for 20 team members -->
-                <div class="card">
-                    <img src="images/nyarko.jpg" alt="Dr. Kofi Nyarko" class="team-photo">
-                    <h3>Dr. Kofi Nyarko</h3>
-                    <p>Director of DEPA Lab</p>
+    <!-- Team Section -->
+    <section id="team" class="section fade-in">
+        <div class="container">
+            <h2>Meet Our Team</h2>
+            <p>Our diverse and talented team is committed to advancing research and innovation.</p>
+            <div class="team-carousel-wrapper">
+                <button class="arrow left-arrow" aria-label="Scroll Left">❮</button>
+                <div class="team-carousel">
+                    <div class="card">
+                        <img src="images/nyarko.jpg" alt="Dr. Kofi Nyarko" class="team-photo">
+                        <h3>Dr. Kofi Nyarko</h3>
+                        <p>Director of DEPA Lab</p>
+                    </div>
+                    <div class="card">
+                        <img src="images/placeholder.jpg" alt="Jane Doe" class="team-photo">
+                        <h3>Jane Doe</h3>
+                        <p>Senior Research Assistant</p>
+                    </div>
                 </div>
-                <div class="card">
-                    <img src="images/nyarko.jpg" alt="Jane Doe" class="team-photo">
-                    <h3>Jane Doe</h3>
-                    <p>Senior Research Assistant</p>
-                </div>
-                <div class="card">
-                    <img src="images/nyarko.jpg" alt="John Smith" class="team-photo">
-                    <h3>John Smith</h3>
-                    <p>Data Scientist</p>
-                </div>
-                <!-- Repeat for placeholders -->
-             
-                <div class="card">
-                    <img src="images/nyarko.jpg" alt="Team Member ${i + 4}" class="team-photo">
-                    <h3>Team Member</h3>
-                    <p>Research Specialist</p>
-                </div>
+                <button class="arrow right-arrow" aria-label="Scroll Right">❯</button>
             </div>
-            <button class="arrow right-arrow" aria-label="Scroll Right">❯</button>
         </div>
-    </div>
-</section>
-
-
+    </section>
 
     <!-- Contact Section -->
     <section id="contact" class="section fade-in">
