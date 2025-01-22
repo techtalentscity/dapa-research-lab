@@ -26,7 +26,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }, { threshold: 0.1 });
 
     fadeElements.forEach(el => observer.observe(el));
-});
 
     // Active Link Highlighting
     const sections = document.querySelectorAll('section');
@@ -59,16 +58,4 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener('scroll', () => {
         scrollTopBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
     });
-
-    // Fade-In Animations
-    const fadeElements = document.querySelectorAll('.fade-in');
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
-    }, { threshold: 0.1 });
-
-    fadeElements.forEach(el => observer.observe(el));
 });
