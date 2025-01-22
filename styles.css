@@ -7,12 +7,6 @@ body {
     line-height: 1.6;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
-}
-
 /* Header Styling */
 header {
     background-color: #1a2b47;
@@ -69,7 +63,7 @@ nav ul li a:hover {
 
 /* Hero Section Styling */
 .hero-section {
-    background-image: url('images/depa1.webp');
+    background-image: url('images/depa1.webp'); /* Path to your hero image */
     background-size: cover;
     background-position: center;
     height: 80vh;
@@ -108,137 +102,130 @@ nav ul li a:hover {
     background-color: #13355b;
 }
 
-/* Lab Overview Section */
-.overview-section {
-    padding: 3rem 1rem;
-    background-color: #f9f9f9;
+/* Container Styling */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
 }
 
-.overview-content {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    align-items: center;
-}
-
-.overview-text {
-    flex: 1 1 50%;
-}
-
-.overview-text ul {
-    list-style: disc;
-    padding-left: 1.5rem;
-}
-
-.overview-image img {
-    max-width: 100%;
-    border-radius: 10px;
-}
-
-/* Research Areas */
-.research-areas-section {
-    padding: 3rem 1rem;
-    text-align: center;
-    background-color: #ffffff;
-}
-
-.research-areas-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-    color: #1a2b47;
-}
-
+/* Grid Layout */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
 }
 
-.area {
-    background-color: #ffffff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 1.5rem;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.area:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.area h3 {
-    font-size: 1.5rem;
-    color: #1a2b47;
-    margin-bottom: 1rem;
-}
-
-.area p {
-    font-size: 1rem;
-    color: #555;
-}
-
-/* Computer Vision Applications */
-.cv-applications-section {
-    padding: 3rem 1rem;
-    background-color: #f0f8ff;
-    text-align: center;
-}
-
-.application {
-    background-color: #ffffff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 1.5rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.application img {
-    max-width: 100%;
-    border-radius: 8px;
-    margin-bottom: 1rem;
-}
-
-.application h3 {
-    font-size: 1.5rem;
-    color: #1a2b47;
-    margin-bottom: 1rem;
-}
-
-.application p {
-    font-size: 1rem;
-    color: #555;
-    line-height: 1.6;
-}
-
-.application:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* IoT Data Section */
-.iot-section {
-    padding: 3rem 1rem;
-    text-align: center;
-    background-color: #f9f9f9;
-}
-
-.iot-section h2 {
+/* Section Titles */
+h2 {
     font-size: 2.5rem;
-    margin-bottom: 1rem;
     color: #1a2b47;
+    text-align: center;
+    margin-bottom: 1.5rem;
 }
 
-.iot-section p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    max-width: 800px;
+/* Overview Section */
+.overview-section ul {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+    list-style-type: disc;
+}
+
+/* General Container Styling */
+.container {
+    max-width: 1200px;
     margin: 0 auto;
-    color: #555;
+    padding: 1rem;
 }
 
-/* Footer */
+/* Research Section Styling */
+.research-section {
+    padding: 3rem 1rem;
+    background-color: #f9f9f9; /* Light background for contrast */
+    text-align: center;
+}
+
+.research-section h2 {
+    font-size: 2.5rem;
+    color: #1a2b47;
+    margin-bottom: 2rem;
+}
+
+/* Grid Layout for Research Items */
+.research-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.research-item {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+}
+
+.research-item h3 {
+    font-size: 1.5rem;
+    color: #1a2b47;
+    margin-bottom: 1rem;
+}
+
+.research-item p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.research-item a {
+    display: inline-block;
+    background-color: #1a2b47;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.research-item a:hover {
+    background-color: #13355b;
+}
+
+.research-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Research Areas and Applications */
+.area, .application {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.area:hover, .application:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.area h3, .application h3 {
+    font-size: 1.5rem;
+    color: #1a2b47;
+    margin-bottom: 0.5rem;
+}
+
+/* Footer Styling */
 footer {
     background-color: #1a2b47;
     color: white;
@@ -251,27 +238,52 @@ footer {
     align-items: flex-start;
     flex-wrap: wrap;
     gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.footer-column {
+.footer-container div {
     flex: 1;
-    min-width: 200px;
+    min-width: 250px;
 }
 
-.footer-column h3 {
+.footer-about h3, .footer-links h3, .footer-contact h3 {
     font-size: 1.2rem;
     margin-bottom: 1rem;
     color: #a8d0e6;
 }
 
-.footer-column p, .footer-column a {
+.footer-about p, .footer-contact p {
     font-size: 1rem;
-    color: white;
-    text-decoration: none;
     line-height: 1.6;
 }
 
-.footer-column a:hover {
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-links ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+    color: #a8d0e6;
+}
+
+.footer-contact a {
+    color: #a8d0e6;
+    text-decoration: none;
+}
+
+.footer-contact a:hover {
     text-decoration: underline;
 }
 
@@ -286,6 +298,7 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    /* Header */
     header {
         flex-direction: column;
         align-items: flex-start;
@@ -300,6 +313,7 @@ footer {
         margin: 0.5rem 0;
     }
 
+    /* Hero Section */
     .hero-section h1 {
         font-size: 2.5rem;
     }
@@ -308,15 +322,12 @@ footer {
         font-size: 1rem;
     }
 
-    .overview-content {
-        flex-direction: column;
-        text-align: center;
-    }
-
+    /* Grid Section */
     .grid {
         grid-template-columns: 1fr;
     }
 
+    /* Footer */
     .footer-container {
         flex-direction: column;
         align-items: center;
@@ -325,5 +336,12 @@ footer {
 
     .footer-container div {
         margin-bottom: 1.5rem;
+    }
+}
+
+/* Responsive Design for Research Section */
+@media (max-width: 768px) {
+    .research-grid {
+        grid-template-columns: 1fr; /* Single column layout for smaller screens */
     }
 }
