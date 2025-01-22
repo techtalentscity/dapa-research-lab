@@ -16,15 +16,15 @@ body {
 
 /* Header Styles */
 .main-header {
+    display: flex; /* Flexbox layout for alignment */
+    align-items: center; /* Vertical alignment */
+    justify-content: space-between; /* Space between logo and navigation */
     background-color: #1a2b47;
+    padding: 1rem 2rem; /* Adjust padding for spacing */
     color: white;
-    padding: 1rem 2rem;
     position: sticky;
     top: 0;
     z-index: 1000;
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /* Ensures logo is on the left and nav is on the right */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -33,32 +33,31 @@ body {
     color: white;
     text-decoration: none;
     font-weight: bold;
-    flex-shrink: 0; /* Prevents the logo from resizing */
 }
 
 .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 1.5rem; /* Space between menu items */
-    margin: 0;
-    padding: 0;
+    display: flex; /* Horizontal layout for links */
+    list-style: none; /* Remove bullet points */
+    margin: 0; /* Reset margins */
+    padding: 0; /* Reset padding */
+    gap: 1.5rem; /* Space between links */
 }
 
 .nav-links li {
-    margin: 0;
+    margin: 0; /* Ensure no extra space */
 }
 
 .nav-links li a {
     color: white;
     text-decoration: none;
     font-weight: 500;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 1rem; /* Padding around the links */
     transition: background-color 0.3s ease;
 }
 
 .nav-links li a:hover {
     background-color: #13355b;
-    border-radius: 5px;
+    border-radius: 5px; /* Rounded corners on hover */
 }
 
 
