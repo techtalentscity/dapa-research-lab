@@ -235,3 +235,94 @@ footer p {
     opacity: 1;
     transform: translateY(0);
 }
+
+/* Innovation and Research Section */
+#innovation {
+    background-color: #f4f4f4;
+    padding: 4rem 0;
+}
+
+#innovation h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #1a2b47;
+}
+
+#innovation p {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #555;
+}
+
+#innovation .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+#innovation .card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+}
+
+#innovation .card h3 {
+    font-size: 1.5rem;
+    color: #1a2b47;
+    margin-bottom: 1rem;
+}
+
+#innovation .card p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+#innovation .card a.btn {
+    display: inline-block;
+    background-color: #1a2b47;
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+#innovation .card a.btn:hover {
+    background-color: #13355b;
+}
+
+#innovation .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #innovation h2 {
+        font-size: 2rem;
+    }
+
+    #innovation p {
+        font-size: 1rem;
+    }
+
+    #innovation .card h3 {
+        font-size: 1.3rem;
+    }
+
+    #innovation .card p {
+        font-size: 0.9rem;
+    }
+
+    #innovation .grid {
+        grid-template-columns: 1fr; /* Single column on small screens */
+    }
+}
