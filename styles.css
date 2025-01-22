@@ -4,6 +4,7 @@ body {
     margin: 0;
     padding: 0;
     color: #333;
+    line-height: 1.6;
 }
 
 /* Header Styling */
@@ -150,7 +151,7 @@ p {
 
 .research-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjusted for smaller devices */
     gap: 2rem;
     max-width: 1200px;
     margin: 0 auto;
@@ -293,6 +294,11 @@ footer {
 
     .hero-section p {
         font-size: 1rem;
+    }
+
+    /* Research Section */
+    .research-grid {
+        grid-template-columns: 1fr; /* Single column on smaller screens */
     }
 
     /* Footer */
