@@ -14,7 +14,7 @@ body {
     margin: 0 auto;
 }
 
-/* Header */
+/* Header Styles */
 .main-header {
     background-color: #1a2b47;
     color: white;
@@ -23,6 +23,9 @@ body {
     top: 0;
     z-index: 1000;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between; /* Ensures logo and nav links are aligned correctly */
+    align-items: center;
 }
 
 .main-header .logo {
@@ -30,12 +33,14 @@ body {
     color: white;
     text-decoration: none;
     font-weight: bold;
+    margin-left: 1rem; /* Space for logo */
 }
 
 .nav-links {
     list-style: none;
     display: flex;
     gap: 1rem;
+    margin-right: 1rem; /* Aligns menu to the right */
 }
 
 .nav-links li a {
@@ -50,6 +55,7 @@ body {
     background-color: #13355b;
     border-radius: 5px;
 }
+
 
 /* Hero Section */
 .hero {
