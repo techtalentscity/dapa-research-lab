@@ -76,32 +76,53 @@ body {
   border-radius: 5px;
 }
 
-
-/* Hero Section */
-.hero {
-  background: url('images/depa2.jpeg') no-repeat center center/cover;
-  color: white;
-  height: 70vh; 
+/* Header Styles */
+.main-header {
   display: flex;
   align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 2rem; 
+  justify-content: space-between;
+  background-color: #1a2b47;
+  padding: 1rem 2rem;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.hero h1 {
-  font-size: 3rem; 
-  margin-bottom: 1rem;
-  animation: slideInOut 5s infinite;
+.main-header .logo {
+  font-size: 1.8rem;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
 }
 
-.hero p {
-  font-size: 1.2rem; 
-  margin-bottom: 2rem;
+.nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 1.5rem; 
+}
+
+.nav-links li {
+  margin: 0;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  background-color: #13355b;
+  border-radius: 5px;
 }
 
 /* Responsive Styles */
-
 @media (max-width: 768px) {
   .main-header {
     flex-direction: column; /* Stack header elements vertically */
@@ -120,19 +141,6 @@ body {
     font-size: 0.9rem;
     padding: 0.8rem 1rem; /* Adjust padding for better touch targets */
     display: block; /* Make links full width */
-  }
-
-  .hero {
-    height: auto; /* Let hero section height adjust to content */
-    padding: 2rem 1rem; /* Reduce padding on smaller screens */
-  }
-
-  .hero h1 {
-    font-size: 2.5rem; /* Slightly reduce heading size */
-  }
-
-  .hero p {
-    font-size: 1rem; /* Slightly reduce paragraph size */
   }
 }
 
