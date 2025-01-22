@@ -14,6 +14,17 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+    // Hero Heading Animation
+    const heroHeading = document.querySelector(".hero h1");
+
+    // Trigger animation on page load
+    heroHeading.style.animation = "none";
+    setTimeout(() => {
+        heroHeading.style.animation = "slideInOut 5s infinite";
+    }, 10);
+});
+
+
     // Active Link Highlighting
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('.nav-links a');
