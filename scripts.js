@@ -33,6 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const rightArrow = document.querySelector('.right-arrow');
 
     if (teamCarousel && leftArrow && rightArrow) {
+        // Scroll Left
         leftArrow.addEventListener('click', () => {
             teamCarousel.scrollBy({
                 left: -300, // Adjust scroll amount
@@ -40,6 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
 
+        // Scroll Right
         rightArrow.addEventListener('click', () => {
             teamCarousel.scrollBy({
                 left: 300, // Adjust scroll amount
@@ -89,6 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
         { name: "John Smith", role: "Data Scientist", image: "images/nyarko.jpg" },
     ];
 
+    // Add placeholders for 17 additional members
     for (let i = 4; i <= 20; i++) {
         teamMembers.push({
             name: `Team Member ${i}`,
@@ -110,9 +113,4 @@ document.addEventListener("DOMContentLoaded", () => {
             teamCarousel.insertAdjacentHTML('beforeend', cardHTML);
         });
     }
-
-    // Responsive Navigation Menu Toggle
-    document.querySelector('.menu-toggle').addEventListener('click', () => {
-        document.querySelector('.nav-links').classList.toggle('active');
-    });
 });
