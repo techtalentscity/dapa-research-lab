@@ -171,32 +171,38 @@
     </div>
 </section>
 
-    <section id="team" class="section fade-in">
+  <section id="team" class="section fade-in">
     <div class="container">
         <h2>Meet Our Team</h2>
         <p>Our diverse and talented team is committed to advancing research and innovation, solving real-world problems through technology.</p>
         <div class="team-carousel">
-            <!-- Team Member 1 -->
+            <!-- Team Members -->
             <div class="card">
                 <img src="images/team-member1.jpg" alt="Dr. Kofi Nyarko" class="team-photo">
                 <h3>Dr. Kofi Nyarko</h3>
                 <p>Director of DEPA Lab</p>
             </div>
-            <!-- Team Member 2 -->
             <div class="card">
                 <img src="images/team-member2.jpg" alt="Jane Doe" class="team-photo">
                 <h3>Jane Doe</h3>
                 <p>Senior Research Assistant</p>
             </div>
-            <!-- Repeat for all team members -->
             <div class="card">
                 <img src="images/team-member3.jpg" alt="John Smith" class="team-photo">
                 <h3>John Smith</h3>
                 <p>Data Scientist</p>
             </div>
+            <!-- Repeat for 25 members -->
+            ${Array.from({ length: 22 }, (_, i) => `
+            <div class="card">
+                <img src="images/team-member${i + 4}.jpg" alt="Team Member ${i + 4}" class="team-photo">
+                <h3>Team Member ${i + 4}</h3>
+                <p>Research Specialist</p>
+            </div>`).join('')}
         </div>
     </div>
 </section>
+
 
 
     <!-- Contact Section -->
