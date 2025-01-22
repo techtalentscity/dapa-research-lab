@@ -5,256 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DEPA Research Lab</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            color: #333;
-        }
-
-        header {
-            background-color: #1a2b47;
-            color: white;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-        }
-
-        .nav-container h1 {
-            font-size: 1.5rem;
-            margin: 0;
-            font-weight: bold;
-        }
-
-        .nav-container h1 a {
-            color: white;
-            text-decoration: none;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            margin: 0;
-            padding: 0;
-        }
-
-        nav ul li {
-            margin: 0 1.5rem;
-        }
-
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 1rem;
-            transition: color 0.3s ease;
-        }
-
-        nav ul li a:hover {
-            color: #a8d0e6;
-        }
-
-        .hero-section {
-            background-image: url('depa1.webp');
-            background-size: cover;
-            background-position: center;
-            height: 80vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
-            padding: 0 2rem;
-        }
-
-        .hero-section h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            font-weight: bold;
-        }
-
-        .hero-section p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            max-width: 600px;
-        }
-
-        .hero-btn {
-            background-color: #1a2b47;
-            color: white;
-            padding: 0.8rem 1.5rem;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 1rem;
-            transition: background-color 0.3s ease;
-        }
-
-        .hero-btn:hover {
-            background-color: #13355b;
-        }
-
-        section {
-            padding: 3rem 1rem;
-        }
-
-        .about-section, .mission-section, .vision-section {
-            text-align: center;
-        }
-
-        .about-section {
-            background-color: #f0f8ff;
-            padding: 3rem 2rem;
-        }
-
-        .mission-section {
-            background-color: #ffe4b5;
-            padding: 3rem 2rem;
-        }
-
-        .vision-section {
-            background-color: #f0f8ff;
-            padding: 3rem 2rem;
-        }
-
-        h2 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            color: #1a2b47;
-        }
-
-        p {
-            font-size: 1.2rem;
-            line-height: 1.6;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        @media (max-width: 768px) {
-            .hero-section h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero-section p {
-                font-size: 1rem;
-            }
-
-            header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            nav ul {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            nav ul li {
-                margin: 0.5rem 0;
-            }
-        }
-    </style>
 </head>
 <body>
-    <header>
-        <div class="nav-container">
-            <h1><a href="#hero">DEPA Research Lab</a></h1>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#mission">Mission</a></li>
-                    <li><a href="#vision">Vision</a></li>
-                    <li><a href="#research">Research</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <!-- Placeholder for the header -->
+    <div id="header-placeholder"></div>
 
-    <section class="hero-section">
-        <div class="container">
-            <h1 style="color: white; text-align: center;">Welcome to DEPA Research Lab</h1>
-            <p style="color: white; text-align: center;">Driving innovation at the intersection of technology and impact.</p>
-            <a href="#research" class="hero-btn">Learn More</a>
-        </div>
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <h1>Welcome to DEPA Research Lab</h1>
+        <p>Driving innovation at the intersection of technology and impact.</p>
+        <a href="research.html" class="hero-btn">Learn More</a>
     </section>
 
-    <section id="about" class="about-section">
-        <h2>About Us</h2>
-        <p>The Data Engineering and Predictive Analytics Lab (DEPA Lab) at Morgan State University, led by Dr. Kofi Nyarko, is dedicated to unraveling the intricacies of complex systems and providing transformative insights. DEPA Lab focuses on applied research in Computer Vision, Machine Learning, and Artificial Intelligence Techniques.</p>
-    </section>
+    <!-- Script to load header -->
+    <script>
+        // Load header content dynamically
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('header-placeholder').innerHTML = data)
+            .catch(error => console.error('Error loading header:', error));
+    </script>
 
-    <section id="mission" class="mission-section">
-        <h2>Our Mission</h2>
-        <p>We develop innovative machine learning models and algorithms for near real-time data collection, transformation, analysis, prediction, and visualization. DEPA Lab promotes inclusivity and innovation in data engineering and predictive analytics.</p>
-    </section>
+    <!-- Placeholder for Footer -->
+    <div id="footer-placeholder"></div>
 
-    <section id="vision" class="vision-section">
-        <h2>Our Vision</h2>
-        <p>The Center for Equitable AI and Machine Learning Systems (CEAMLS) facilitates the development and deployment of socially responsible and equitable AI systems, ensuring they benefit everyone while educating the public about their impacts on health, prosperity, and happiness.</p>
-    </section>
-    
-    <section id="research" class="research-section">
-        <div class="container">
-            <h2>Research Areas</h2>
-            <div class="research-grid">
-                <div class="research-item">
-                    <h3>Machine Learning</h3>
-                    <p>Optimizing algorithms for real-world decision support and autonomous systems.</p>
-                    <a href="#" class="apply-btn">Apply</a>
-                </div>
-                <div class="research-item">
-                    <h3>Computer Vision</h3>
-                    <p>Automating traffic data analysis, pose estimation, and scene perception for diverse applications.</p>
-                    <a href="#" class="apply-btn">Apply</a>
-                </div>
-                <div class="research-item">
-                    <h3>IoT Data Analytics</h3>
-                    <p>Developing pipelines for dynamic visualization and real-time analytics.</p>
-                    <a href="#" class="apply-btn">Apply</a>
-                </div>
-                <div class="research-item">
-                    <h3>Ethical AI Framework</h3>
-                    <p>Advancing trustworthy and unbiased AI systems while addressing algorithmic bias.</p>
-                    <a href="#" class="apply-btn">Learn More</a>
-                </div>
-                <div class="research-item">
-                    <h3>Human-Computer Interaction</h3>
-                    <p>Creating interactive visualization tools for enhanced situational awareness.</p>
-                    <a href="#" class="apply-btn">Apply</a>
-                </div>
-                <div class="research-item">
-                    <h3>Autonomous Systems</h3>
-                    <p>Developing robust algorithms for real-time navigation in challenging environments.</p>
-                    <a href="#" class="apply-btn">Apply</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <h2>Contact Us</h2>
-            <p>Email: <a href="mailto:kofi.nyarko@morgan.edu">kofi.nyarko@morgan.edu</a></p>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>© 2025 DEPA Research Lab. All rights reserved.</p>
-        </div>
-    </footer>
+    <!-- Script to load footer -->
+    <script>
+        // Load footer content dynamically
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer-placeholder').innerHTML = data)
+            .catch(error => console.error('Error loading footer:', error));
+    </script>
 </body>
 </html>
