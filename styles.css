@@ -1,3 +1,4 @@
+/* General Body Styling */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -5,6 +6,7 @@ body {
     color: #333;
 }
 
+/* Header Styling */
 header {
     background-color: #1a2b47;
     color: white;
@@ -58,6 +60,7 @@ nav ul li a:hover {
     color: #a8d0e6;
 }
 
+/* Hero Section Styling */
 .hero-section {
     background-image: url('depa1.webp');
     background-size: cover;
@@ -98,6 +101,7 @@ nav ul li a:hover {
     background-color: #13355b;
 }
 
+/* Section Styling */
 section {
     padding: 3rem 1rem;
 }
@@ -108,17 +112,14 @@ section {
 
 .about-section {
     background-color: #f0f8ff;
-    padding: 3rem 2rem;
 }
 
 .mission-section {
     background-color: #ffe4b5;
-    padding: 3rem 2rem;
 }
 
 .vision-section {
     background-color: #f0f8ff;
-    padding: 3rem 2rem;
 }
 
 h2 {
@@ -134,15 +135,80 @@ p {
     margin: 0 auto;
 }
 
+/* Footer Styling */
+footer {
+    background-color: #1a2b47;
+    color: white;
+    padding: 2rem 1rem;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-container div {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-about h3, .footer-links h3, .footer-contact h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #a8d0e6;
+}
+
+.footer-about p, .footer-contact p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-links ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+    color: #a8d0e6;
+}
+
+.footer-contact a {
+    color: #a8d0e6;
+    text-decoration: none;
+}
+
+.footer-contact a:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: #a8d0e6;
+    border-top: 1px solid #a8d0e6;
+    padding-top: 1rem;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
-    .hero-section h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero-section p {
-        font-size: 1rem;
-    }
-
+    /* Header */
     header {
         flex-direction: column;
         align-items: flex-start;
@@ -155,5 +221,25 @@ p {
 
     nav ul li {
         margin: 0.5rem 0;
+    }
+
+    /* Hero Section */
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-section p {
+        font-size: 1rem;
+    }
+
+    /* Footer */
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-container div {
+        margin-bottom: 1.5rem;
     }
 }
