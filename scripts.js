@@ -83,4 +83,30 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener('scroll', () => {
         scrollTopBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
     });
+
+    // Dynamic Team Members
+    const teamMembers = [
+        { name: "Dr. Kofi Nyarko", role: "Director of DEPA Lab", image: "images/nyarko.jpg" },
+        { name: "Jane Doe", role: "Senior Research Assistant", image: "images/nyarko.jpg" },
+        { name: "John Smith", role: "Data Scientist", image: "images/nyarko.jpg" },
+        ...Array.from({ length: 17 }, (_, i) => ({
+            name: `Team Member ${i + 4}`,
+            role: "Research Specialist",
+            image: "images/nyarko.jpg"
+        }))
+    ];
+
+    // Populate Team Carousel
+    if (teamCarousel) {
+        teamMembers.forEach(member => {
+            const cardHTML = `
+                <div class="card">
+                    <img src="${member.image}" alt="${member.name}" class="team-photo">
+                    <h3>${member.name}</h3>
+                    <p>${member.role}</p>
+                </div>
+            `;
+            teamCarousel.insertAdjacentHTML('beforeend', cardHTML);
+        });
+    }
 });
