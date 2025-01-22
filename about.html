@@ -8,25 +8,34 @@
 </head>
 <body>
     <!-- Header -->
-    <div id="header-placeholder"></div>
+    <header class="main-header">
+        <div class="container">
+            <a href="index.html" class="logo">DEPA Research Lab</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="mission.html">Mission</a></li>
+                    <li><a href="vision.html">Vision</a></li>
+                    <li><a href="research.html">Research</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
     <!-- About Section -->
-    <section id="about" class="about-section">
-        <h2>About Us</h2>
-        <p>The Data Engineering and Predictive Analytics Lab (DEPA Lab) at Morgan State University, led by Dr. Kofi Nyarko, is dedicated to unraveling the intricacies of complex systems and providing transformative insights. DEPA Lab focuses on applied research in Computer Vision, Machine Learning, and Artificial Intelligence Techniques.</p>
+    <section class="section">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>The Data Engineering and Predictive Analytics Lab (DEPA Lab) at Morgan State University, led by Dr. Kofi Nyarko, is dedicated to unraveling the intricacies of complex systems and providing transformative insights. DEPA Lab focuses on applied research in Computer Vision, Machine Learning, and Artificial Intelligence Techniques.</p>
+        </div>
     </section>
 
     <!-- Footer -->
-    <div id="footer-placeholder"></div>
-
-    <!-- Dynamic Header and Footer Scripts -->
-    <script>
-        fetch('header.html')
-            .then(response => response.text())
-            .then(data => document.getElementById('header-placeholder').innerHTML = data);
-        fetch('footer.html')
-            .then(response => response.text())
-            .then(data => document.getElementById('footer-placeholder').innerHTML = data);
-    </script>
+    <footer>
+        <div class="container">
+            <p>© 2025 DEPA Research Lab. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
