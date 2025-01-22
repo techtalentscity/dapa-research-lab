@@ -485,10 +485,12 @@ footer p {
 }
 
 .team-photo {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
+    width: 100px; /* Set fixed width */
+    height: 100px; /* Set fixed height to match width */
+    border-radius: 50%; /* Make the image circular */
     margin-bottom: 1rem;
+    object-fit: cover; /* Ensure the image fits inside the circle */
+    border: 2px solid #1a2b47; /* Optional: Add a border for a polished look */
 }
 
 .card h3 {
