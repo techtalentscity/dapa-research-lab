@@ -62,7 +62,7 @@ nav ul li a:hover {
 
 /* Hero Section Styling */
 .hero-section {
-    background-image: url('depa1.webp');
+    background-image: url('images/depa1.webp'); /* Path to your hero image */
     background-size: cover;
     background-position: center;
     height: 80vh;
