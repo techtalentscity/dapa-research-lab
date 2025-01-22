@@ -73,14 +73,36 @@ body {
     border-radius: 5px;
 }
 
+/* Responsive Menu Button */
+.menu-toggle {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1100;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
     .nav-links {
         flex-direction: column;
+        position: absolute;
+        top: 100%; /* Below the header */
+        left: 0;
+        right: 0;
+        background-color: #1a2b47;
         overflow: hidden;
         max-height: 0; /* Initially hidden */
-        width: 100%;
-        background-color: #1a2b47;
+        transition: max-height 0.3s ease-in-out;
     }
 
     .nav-links.active {
@@ -97,6 +119,7 @@ body {
     }
 }
 
+/* Button Styles */
 .btn {
     display: inline-block;
     padding: 0.8rem 1.5rem;
@@ -168,29 +191,6 @@ footer p {
     color: #a8d0e6;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .main-header {
-        text-align: center;
-    }
-
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-
-    .grid {
-        grid-template-columns: 1fr;
-    }
-
-    .card h3 {
-        font-size: 1.3rem;
-    }
-
-    .card p {
-        font-size: 0.9rem;
-    }
-}
-
 /* Scroll-to-Top Button */
 .scroll-to-top {
     position: fixed;
@@ -224,458 +224,26 @@ footer p {
     transform: translateY(0);
 }
 
-/* Innovation and Research Section */
-#innovation {
-    background-color: #f4f4f4;
-    padding: 4rem 0;
-}
-
-#innovation h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    color: #1a2b47;
-}
-
-#innovation p {
-    text-align: center;
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    color: #555;
-}
-
-#innovation .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-}
-
-#innovation .card {
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 1.5rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-#innovation .card h3 {
-    font-size: 1.5rem;
-    color: #1a2b47;
-    margin-bottom: 1rem;
-}
-
-#innovation .card p {
-    font-size: 1rem;
-    color: #555;
-    margin-bottom: 1rem;
-}
-
-#innovation .card a.btn {
-    display: inline-block;
-    background-color: #1a2b47;
-    color: white;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    font-size: 1rem;
-    transition: background-color 0.3s ease;
-}
-
-#innovation .card a.btn:hover {
-    background-color: #13355b;
-}
-
-#innovation .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
-}
-
-/* Responsive Innovation Section */
-@media (max-width: 768px) {
-    #innovation h2 {
-        font-size: 2rem;
-    }
-
-    #innovation p {
-        font-size: 1rem;
-    }
-
-    #innovation .grid {
-        grid-template-columns: 1fr;
-    }
-
-    #innovation .card h3 {
-        font-size: 1.3rem;
-    }
-
-    #innovation .card p {
-        font-size: 0.9rem;
-    }
-}
-/* Events and News Section */
-#events {
-    padding: 4rem 0;
-    background-color: #f9f9f9;
-}
-
-#events h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    color: #1a2b47;
-}
-
-#events p {
-    text-align: center;
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    color: #555;
-}
-
-#events .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-}
-
-#events .card {
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 1.5rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-align: center;
-}
-
-#events .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
-}
-
-#events .card h3 {
-    font-size: 1.5rem;
-    color: #1a2b47;
-    margin-bottom: 1rem;
-}
-
-#events .card p {
-    font-size: 1rem;
-    color: #555;
-    margin-bottom: 1rem;
-    line-height: 1.6;
-}
-
-#events .card a.btn {
-    display: inline-block;
-    background-color: #1a2b47;
-    color: white;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    font-size: 1rem;
-    transition: background-color 0.3s ease;
-}
-
-#events .card a.btn:hover {
-    background-color: #13355b;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    #events h2 {
-        font-size: 2rem;
-    }
-
-    #events p {
-        font-size: 1rem;
-    }
-
-    #events .grid {
-        grid-template-columns: 1fr; /* Single column layout for small screens */
-    }
-
-    #events .card h3 {
-        font-size: 1.3rem;
-    }
-
-    #events .card p {
-        font-size: 0.9rem;
-    }
-}
-
-/* Team Section */
-#team {
-    padding: 4rem 0;
-    background-color: #f4f4f4;
-    overflow: hidden;
-}
-
-#team h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    color: #1a2b47;
-    margin-bottom: 1rem;
-}
-
-#team p {
-    text-align: center;
-    font-size: 1.2rem;
-    color: #555;
-    margin-bottom: 2rem;
-}
-
-/* Team Carousel Wrapper */
-.team-carousel-wrapper {
-    position: relative;
-    display: flex;
-    align-items: center;
-}
-
-/* Team Carousel */
-.team-carousel {
-    display: flex;
-    gap: 1.5rem;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    padding: 1rem 0;
-    flex-grow: 1;
-}
-
-.team-carousel::-webkit-scrollbar {
-    height: 10px;
-}
-
-.team-carousel::-webkit-scrollbar-thumb {
-    background: #1a2b47;
-    border-radius: 5px;
-}
-
-.team-carousel::-webkit-scrollbar-track {
-    background: #e4e4e4;
-}
-
-/* Carousel Arrows */
-.arrow {
-    position: absolute;
-    top: 50%; /* Center vertically */
-    transform: translateY(-50%);
-    background-color: #1a2b47;
-    color: white;
-    border: none;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10;
-    transition: background-color 0.3s ease;
-    font-size: 1.2rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.arrow:hover {
-    background-color: #13355b;
-}
-
-.left-arrow {
-    left: -20px; /* Adjust position to align with carousel */
-}
-
-.right-arrow {
-    right: -20px; /* Adjust position to align with carousel */
-}
-
-/* Cards */
-.card {
-    min-width: 250px;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 1.5rem;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    flex-shrink: 0; /* Prevent cards from shrinking */
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
-}
-
-.team-photo {
-    width: 100px; /* Set fixed width */
-    height: 100px; /* Set fixed height to match width */
-    border-radius: 50%; /* Make the image circular */
-    margin-bottom: 1rem;
-    object-fit: cover; /* Ensure the image fits inside the circle */
-    border: 2px solid #1a2b47; /* Optional: Add a border for a polished look */
-}
-
-.card h3 {
-    font-size: 1.5rem;
-    color: #1a2b47;
-    margin-bottom: 0.5rem;
-}
-
-.card p {
-    font-size: 1rem;
-    color: #555;
-}
-
 /* Responsive Adjustments */
-@media (max-width: 768px) {
-    #team h2 {
-        font-size: 2rem;
-    }
-
-    #team p {
-        font-size: 1rem;
-    }
-
-    .team-photo {
-        width: 80px;
-        height: 80px;
-    }
-
-    .card {
-        min-width: 200px;
-    }
-
-    .arrow {
-        width: 35px;
-        height: 35px;
-        font-size: 1rem;
-    }
-
-    .left-arrow {
-        left: -15px;
-    }
-
-    .right-arrow {
-        right: -15px;
-    }
-}
-
-/* General Section Styles */
-.section {
-    padding: 4rem 0;
-    text-align: center;
-}
-
-.section h2 {
-    font-size: 2.5rem;
-    color: #1a2b47;
-    margin-bottom: 2rem;
-}
-
-/* Card-Like Container for Text */
-.info-card {
-    background-color: #fff;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    max-width: 800px;
-    margin: 0 auto; /* Center the card */
-    text-align: left;
-    line-height: 1.8;
-    color: #555;
-}
-
-.info-card p {
-    font-size: 1.2rem;
-    margin: 0;
-}
-
-/* Section Background Colors */
-.bg-light {
-    background-color: #f9f9f9;
-}
-
-/* Responsive Design */
 @media (max-width: 768px) {
     .section h2 {
         font-size: 2rem;
     }
 
-    .info-card {
-        padding: 1.5rem;
+    .grid {
+        grid-template-columns: 1fr;
     }
 
-    .info-card p {
+    .card h3 {
+        font-size: 1.3rem;
+    }
+
+    .card p {
+        font-size: 0.9rem;
+    }
+
+    .scroll-to-top {
         font-size: 1rem;
-    }
-}
-/* General Section Styling */
-.about-section {
-    padding: 4rem 2rem;
-    background-color: #f9f9f9;
-    text-align: center;
-    color: #333;
-}
-
-.about-section .title {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #1a2b47;
-    margin-bottom: 2rem;
-}
-
-.about-text {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    margin-bottom: 3rem;
-    color: #555;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* Card Container */
-.card-container {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap; /* Ensures responsiveness */
-}
-
-.info-card {
-    background-color: #fff;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
-    flex: 1; /* Ensures equal sizing */
-    min-width: 300px;
-    text-align: left;
-}
-
-.info-card h3 {
-    font-size: 1.5rem;
-    color: #1a2b47;
-    margin-bottom: 1rem;
-}
-
-.info-card p {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #555;
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-    .info-card {
-        max-width: 100%;
-    }
-
-    .about-section .title {
-        font-size: 2rem;
-    }
-
-    .about-text {
-        font-size: 1rem;
+        padding: 0.5rem;
     }
 }
