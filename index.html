@@ -12,10 +12,12 @@
 
     <!-- Hero Section -->
     <section id="hero" class="hero-section">
-        <div class="hero-content">
-            <h1>Welcome to DEPA Research Lab</h1>
-            <p>Driving innovation at the intersection of technology and impact.</p>
-            <a href="research.html" class="hero-btn">Explore Research Areas</a>
+        <div class="hero-overlay">
+            <div class="hero-content">
+                <h1>Welcome to DEPA Research Lab</h1>
+                <p>Driving innovation at the intersection of technology and impact.</p>
+                <a href="#research-areas" class="hero-btn">Explore Our Research</a>
+            </div>
         </div>
     </section>
 
@@ -33,7 +35,7 @@
                     </ul>
                 </div>
                 <div class="overview-image">
-                    <img src="images/depa2.jpeg" alt="Lab Overview">
+                    <img src="images/depa-lab.webp" alt="Lab Discussion">
                 </div>
             </div>
         </div>
@@ -74,22 +76,22 @@
             <h2>Computer Vision Applications</h2>
             <div class="grid">
                 <div class="application">
-                    <img src="images/depa2.jpeg" alt="Pose Estimation">
+                    <img src="images/pose-estimation.webp" alt="Pose Estimation">
                     <h3>Pose Estimation</h3>
                     <p>Track and identify objects in challenging environments using multi-layer vision algorithms.</p>
                 </div>
                 <div class="application">
-                    <img src="images/depa2.jpeg" alt="Traffic Analytics">
+                    <img src="images/traffic-analytics.webp" alt="Traffic Analytics">
                     <h3>Traffic Analytics</h3>
                     <p>Automate vehicle and pedestrian tracking using real-time video analysis.</p>
                 </div>
                 <div class="application">
-                    <img src="images/depa2.jpeg" alt="Scene Perception">
+                    <img src="images/scene-perception.webp" alt="Scene Perception">
                     <h3>Scene Perception</h3>
                     <p>Use LIDAR to segment regions and detect changes in real-time.</p>
                 </div>
                 <div class="application">
-                    <img src="images/depa2.jpeg" alt="Self-Navigating Wheelchair">
+                    <img src="images/wheelchair.webp" alt="Self-Navigating Wheelchair">
                     <h3>Self-Navigating Wheelchair</h3>
                     <p>Enable urban navigation for individuals with disabilities using vision sensors.</p>
                 </div>
@@ -97,29 +99,15 @@
         </div>
     </section>
 
-    <!-- IoT Data Analytics Section -->
-    <section id="iot-data" class="iot-section">
-        <div class="container">
-            <h2>IoT Data Analytics</h2>
-            <p>Integrate IoT pipelines with visualization tools and machine learning models for network monitoring, anomaly detection, and human-machine interfacing.</p>
-        </div>
-    </section>
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
 
-    <!-- Script to load header -->
+    <!-- Scripts to load dynamic header and footer -->
     <script>
-        // Load header content dynamically
         fetch('header.html')
             .then(response => response.text())
             .then(data => document.getElementById('header-placeholder').innerHTML = data)
             .catch(error => console.error('Error loading header:', error));
-    </script>
-
-    <!-- Placeholder for Footer -->
-    <div id="footer-placeholder"></div>
-
-    <!-- Script to load footer -->
-    <script>
-        // Load footer content dynamically
         fetch('footer.html')
             .then(response => response.text())
             .then(data => document.getElementById('footer-placeholder').innerHTML = data)
