@@ -426,7 +426,6 @@ footer p {
     }
 }
 
-
 /* Team Section */
 #team {
     padding: 4rem 0;
@@ -448,12 +447,14 @@ footer p {
     margin-bottom: 2rem;
 }
 
+/* Team Carousel Wrapper */
 .team-carousel-wrapper {
     position: relative;
     display: flex;
     align-items: center;
 }
 
+/* Team Carousel */
 .team-carousel {
     display: flex;
     gap: 1.5rem;
@@ -476,10 +477,10 @@ footer p {
     background: #e4e4e4;
 }
 
-/* Arrows */
+/* Carousel Arrows */
 .arrow {
     position: absolute;
-    top: 50%;
+    top: 50%; /* Center vertically */
     transform: translateY(-50%);
     background-color: #1a2b47;
     color: white;
@@ -493,6 +494,8 @@ footer p {
     justify-content: center;
     z-index: 10;
     transition: background-color 0.3s ease;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .arrow:hover {
@@ -500,11 +503,11 @@ footer p {
 }
 
 .left-arrow {
-    left: -20px;
+    left: -20px; /* Adjust position to align with carousel */
 }
 
 .right-arrow {
-    right: -20px;
+    right: -20px; /* Adjust position to align with carousel */
 }
 
 /* Cards */
@@ -516,7 +519,7 @@ footer p {
     padding: 1.5rem;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    flex-shrink: 0;
+    flex-shrink: 0; /* Prevent cards from shrinking */
 }
 
 .card:hover {
@@ -546,15 +549,6 @@ footer p {
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
-    .card {
-        min-width: 200px;
-    }
-
-    .team-photo {
-        width: 80px;
-        height: 80px;
-    }
-
     #team h2 {
         font-size: 2rem;
     }
@@ -563,8 +557,26 @@ footer p {
         font-size: 1rem;
     }
 
+    .team-photo {
+        width: 80px;
+        height: 80px;
+    }
+
+    .card {
+        min-width: 200px;
+    }
+
     .arrow {
         width: 35px;
         height: 35px;
+        font-size: 1rem;
+    }
+
+    .left-arrow {
+        left: -15px;
+    }
+
+    .right-arrow {
+        right: -15px;
     }
 }
