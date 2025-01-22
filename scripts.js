@@ -14,19 +14,18 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // Fade-in Animation Debugging
+    // Fade-In Animation Logic
     const fadeElements = document.querySelectorAll('.fade-in');
-    fadeElements.forEach(element => {
-        element.style.opacity = '1'; // Ensure visibility
-        element.style.transform = 'none'; // Reset transform
-    });
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target); // Stop observing once visible
+            }
+        });
+    }, { threshold: 0.1 });
 
-    // Hero Heading Animation
-    const heroHeading = document.querySelector(".hero h1");
-    heroHeading.style.animation = "none";
-    setTimeout(() => {
-        heroHeading.style.animation = "slideInOut 5s infinite";
-    }, 10);
+    fadeElements.forEach(el => observer.observe(el));
 });
 
     // Active Link Highlighting
