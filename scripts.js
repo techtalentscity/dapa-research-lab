@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Smooth Scrolling
+    // Smooth Scrolling for Navigation Links
     document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const targetSection = document.getElementById(targetId);
             if (targetSection) {
                 window.scrollTo({
-                    top: targetSection.offsetTop - 60,
+                    top: targetSection.offsetTop - 60, // Adjust for header height
                     behavior: 'smooth'
                 });
             }
@@ -32,23 +32,27 @@ document.addEventListener("DOMContentLoaded", () => {
     const leftArrow = document.querySelector('.left-arrow');
     const rightArrow = document.querySelector('.right-arrow');
 
-    // Scroll Left
-    leftArrow.addEventListener('click', () => {
-        teamCarousel.scrollBy({
-            left: -300, // Adjust scroll amount
-            behavior: 'smooth'
+    if (teamCarousel && leftArrow && rightArrow) {
+        // Scroll Left
+        leftArrow.addEventListener('click', () => {
+            teamCarousel.scrollBy({
+                left: -300, // Adjust scroll amount
+                behavior: 'smooth'
+            });
         });
-    });
 
-    // Scroll Right
-    rightArrow.addEventListener('click', () => {
-        teamCarousel.scrollBy({
-            left: 300, // Adjust scroll amount
-            behavior: 'smooth'
+        // Scroll Right
+        rightArrow.addEventListener('click', () => {
+            teamCarousel.scrollBy({
+                left: 300, // Adjust scroll amount
+                behavior: 'smooth'
+            });
         });
-    });
+    } else {
+        console.warn('Carousel or arrows not found in the DOM.');
+    }
 
-    // Active Link Highlighting
+    // Active Link Highlighting for Navigation
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('.nav-links a');
 
