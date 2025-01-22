@@ -18,14 +18,14 @@ body {
 .main-header {
     background-color: #1a2b47;
     color: white;
-    padding: 1rem 0;
+    padding: 1rem 2rem;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
-    justify-content: space-between; /* Ensures logo and nav links are aligned correctly */
     align-items: center;
+    justify-content: space-between; /* Ensures logo is on the left and nav is on the right */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .main-header .logo {
@@ -33,14 +33,19 @@ body {
     color: white;
     text-decoration: none;
     font-weight: bold;
-    margin-left: 1rem; /* Space for logo */
+    flex-shrink: 0; /* Prevents the logo from resizing */
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 1rem;
-    margin-right: 1rem; /* Aligns menu to the right */
+    gap: 1.5rem; /* Space between menu items */
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin: 0;
 }
 
 .nav-links li a {
