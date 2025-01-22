@@ -27,6 +27,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
     fadeElements.forEach(el => observer.observe(el));
 
+    // Carousel Arrow Functionality
+    const teamCarousel = document.querySelector('.team-carousel');
+    const leftArrow = document.querySelector('.left-arrow');
+    const rightArrow = document.querySelector('.right-arrow');
+
+    // Scroll Left
+    leftArrow.addEventListener('click', () => {
+        teamCarousel.scrollBy({
+            left: -300, // Adjust scroll amount
+            behavior: 'smooth'
+        });
+    });
+
+    // Scroll Right
+    rightArrow.addEventListener('click', () => {
+        teamCarousel.scrollBy({
+            left: 300, // Adjust scroll amount
+            behavior: 'smooth'
+        });
+    });
+
     // Active Link Highlighting
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('.nav-links a');
