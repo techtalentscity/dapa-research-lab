@@ -426,6 +426,7 @@ footer p {
     }
 }
 
+
 /* Team Section */
 #team {
     padding: 4rem 0;
@@ -447,12 +448,19 @@ footer p {
     margin-bottom: 2rem;
 }
 
+.team-carousel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
 .team-carousel {
     display: flex;
     gap: 1.5rem;
     overflow-x: auto;
     scroll-behavior: smooth;
     padding: 1rem 0;
+    flex-grow: 1;
 }
 
 .team-carousel::-webkit-scrollbar {
@@ -468,6 +476,38 @@ footer p {
     background: #e4e4e4;
 }
 
+/* Arrows */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #1a2b47;
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: background-color 0.3s ease;
+}
+
+.arrow:hover {
+    background-color: #13355b;
+}
+
+.left-arrow {
+    left: -20px;
+}
+
+.right-arrow {
+    right: -20px;
+}
+
+/* Cards */
 .card {
     min-width: 250px;
     background: white;
@@ -521,5 +561,10 @@ footer p {
 
     #team p {
         font-size: 1rem;
+    }
+
+    .arrow {
+        width: 35px;
+        height: 35px;
     }
 }
