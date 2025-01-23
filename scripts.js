@@ -2,22 +2,15 @@ document.addEventListener("DOMContentLoaded", () => {
   "use strict";
 
   /**
-   * Easy selector helper function
+   * Helper functions
    */
   const select = (el, all = false) => {
     el = el.trim();
-    if (all) {
-      return [...document.querySelectorAll(el)];
-    } else {
-      return document.querySelector(el);
-    }
+    return all ? [...document.querySelectorAll(el)] : document.querySelector(el);
   };
 
-  /**
-   * Easy event listener function
-   */
   const on = (type, el, listener, all = false) => {
-    let selectEl = select(el, all);
+    const selectEl = select(el, all);
     if (selectEl) {
       if (all) {
         selectEl.forEach((e) => e.addEventListener(type, listener));
@@ -28,47 +21,12 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   /**
-   * Easy on scroll event listener
-   */
-  const onscroll = (el, listener) => {
-    el.addEventListener("scroll", listener);
-  };
-
-  /**
-   * Navbar links active state on scroll
-   */
-  let navbarlinks = select("#navbar .scrollto", true);
-  const navbarlinksActive = () => {
-    let position = window.scrollY + 200; // Adjust offset
-    navbarlinks.forEach((navbarlink) => {
-      if (!navbarlink.hash) return;
-      let section = select(navbarlink.hash);
-      if (!section) return;
-      if (
-        position >= section.offsetTop &&
-        position <= section.offsetTop + section.offsetHeight
-      ) {
-        navbarlink.classList.add("active");
-      } else {
-        navbarlink.classList.remove("active");
-      }
-    });
-  };
-  window.addEventListener("load", navbarlinksActive);
-  onscroll(document, navbarlinksActive);
-
-  /**
-   * Scrolls to an element with header offset
+   * Smooth scroll to an element with header offset
    */
   const scrollto = (el) => {
-    let header = select("#header");
-    let offset = header.offsetHeight;
-
-    if (!header.classList.contains("header-scrolled")) {
-      offset -= 16;
-    }
-
-    let elementPos = select(el).offsetTop;
+    const header = select(".main-header");
+    const offset = header ? header.offsetHeight : 0;
+    const elementPos = select(el).offsetTop;
     window.scrollTo({
       top: elementPos - offset,
       behavior: "smooth",
@@ -76,44 +34,16 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   /**
-   * Toggle .header-scrolled class to #header when page is scrolled
-   */
-  let selectHeader = select("#header");
-  if (selectHeader) {
-    const headerScrolled = () => {
-      if (window.scrollY > 100) {
-        selectHeader.classList.add("header-scrolled");
-      } else {
-        selectHeader.classList.remove("header-scrolled");
-      }
-    };
-    window.addEventListener("load", headerScrolled);
-    onscroll(document, headerScrolled);
-  }
-
-  /**
    * Mobile nav toggle
    */
-  on("click", ".mobile-nav-toggle", function (e) {
-    select("#navbar").classList.toggle("navbar-mobile");
+  on("click", ".mobile-nav-toggle", function () {
+    const navLinks = select(".nav-links");
+    if (navLinks) {
+      navLinks.classList.toggle("active");
+    }
     this.classList.toggle("bi-list");
     this.classList.toggle("bi-x");
   });
-
-  /**
-   * Mobile nav dropdowns activate
-   */
-  on(
-    "click",
-    ".navbar .dropdown > a",
-    function (e) {
-      if (select("#navbar").classList.contains("navbar-mobile")) {
-        e.preventDefault();
-        this.nextElementSibling.classList.toggle("dropdown-active");
-      }
-    },
-    true
-  );
 
   /**
    * Scroll with offset on links with a class name .scrollto
@@ -125,13 +55,15 @@ document.addEventListener("DOMContentLoaded", () => {
       if (select(this.hash)) {
         e.preventDefault();
 
-        let navbar = select("#navbar");
-        if (navbar.classList.contains("navbar-mobile")) {
-          navbar.classList.remove("navbar-mobile");
-          let navbarToggle = select(".mobile-nav-toggle");
-          navbarToggle.classList.toggle("bi-list");
-          navbarToggle.classList.toggle("bi-x");
+        const navLinks = select(".nav-links");
+        const mobileToggle = select(".mobile-nav-toggle");
+
+        if (navLinks && navLinks.classList.contains("active")) {
+          navLinks.classList.remove("active");
+          mobileToggle.classList.toggle("bi-list");
+          mobileToggle.classList.toggle("bi-x");
         }
+
         scrollto(this.hash);
       }
     },
@@ -139,7 +71,58 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 
   /**
-   * Scroll with offset on page load with hash links in the URL
+   * Highlight active nav link on scroll
+   */
+  const highlightNavOnScroll = () => {
+    const position = window.scrollY + 200; // Adjust offset for active link
+    const sections = select("section", true);
+    const navLinks = select(".nav-links a", true);
+
+    sections.forEach((section) => {
+      if (
+        position >= section.offsetTop &&
+        position <= section.offsetTop + section.offsetHeight
+      ) {
+        navLinks.forEach((link) => {
+          link.classList.remove("active");
+          if (link.getAttribute("href").substring(1) === section.id) {
+            link.classList.add("active");
+          }
+        });
+      }
+    });
+  };
+
+  window.addEventListener("scroll", highlightNavOnScroll);
+
+  /**
+   * Scroll-to-Top Button
+   */
+  const scrollTopBtn = document.createElement("button");
+  scrollTopBtn.textContent = "↑";
+  scrollTopBtn.classList.add("scroll-to-top");
+  document.body.appendChild(scrollTopBtn);
+
+  scrollTopBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  window.addEventListener("scroll", () => {
+    scrollTopBtn.style.display = window.scrollY > 300 ? "block" : "none";
+  });
+
+  /**
+   * Remove Preloader
+   */
+  const preloader = select("#preloader");
+  if (preloader) {
+    window.addEventListener("load", () => {
+      preloader.remove();
+    });
+  }
+
+  /**
+   * Smooth scrolling on page load with hash links
    */
   window.addEventListener("load", () => {
     if (window.location.hash) {
@@ -150,39 +133,27 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /**
-   * Preloader
+   * Dynamic Header Styling on Scroll
    */
-  let preloader = select("#preloader");
-  if (preloader) {
-    window.addEventListener("load", () => {
-      preloader.remove();
-    });
+  const header = select(".main-header");
+  if (header) {
+    const toggleHeaderScrolled = () => {
+      if (window.scrollY > 100) {
+        header.classList.add("header-scrolled");
+      } else {
+        header.classList.remove("header-scrolled");
+      }
+    };
+    window.addEventListener("load", toggleHeaderScrolled);
+    window.addEventListener("scroll", toggleHeaderScrolled);
   }
-
-  /**
-   * Fade-In Animation Logic
-   */
-  const fadeElements = document.querySelectorAll(".fade-in");
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          observer.unobserve(entry.target); // Stop observing once visible
-        }
-      });
-    },
-    { threshold: 0.1 }
-  );
-
-  fadeElements.forEach((el) => observer.observe(el));
 
   /**
    * Carousel Arrow Functionality
    */
-  const teamCarousel = document.querySelector(".team-carousel");
-  const leftArrow = document.querySelector(".left-arrow");
-  const rightArrow = document.querySelector(".right-arrow");
+  const teamCarousel = select(".team-carousel");
+  const leftArrow = select(".left-arrow");
+  const rightArrow = select(".right-arrow");
 
   if (teamCarousel && leftArrow && rightArrow) {
     // Scroll Left
@@ -202,53 +173,5 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   } else {
     console.warn("Carousel or arrows not found in the DOM.");
-  }
-
-  /**
-   * Scroll-to-Top Button
-   */
-  const scrollTopBtn = document.createElement("button");
-  scrollTopBtn.textContent = "↑";
-  scrollTopBtn.classList.add("scroll-to-top");
-  document.body.appendChild(scrollTopBtn);
-
-  scrollTopBtn.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
-
-  window.addEventListener("scroll", () => {
-    scrollTopBtn.style.display = window.scrollY > 300 ? "block" : "none";
-  });
-
-  /**
-   * Team Members Array
-   */
-  const teamMembers = [
-    { name: "Dr. Kofi Nyarko", role: "Director of DEPA Lab", image: "images/nyarko.jpg" },
-    { name: "Jane Doe", role: "Senior Research Assistant", image: "images/nyarko.jpg" },
-    { name: "John Smith", role: "Data Scientist", image: "images/nyarko.jpg" },
-  ];
-
-  // Add placeholders for additional members
-  for (let i = 4; i <= 20; i++) {
-    teamMembers.push({
-      name: `Team Member ${i}`,
-      role: "Research Specialist",
-      image: "images/nyarko.jpg",
-    });
-  }
-
-  // Populate the Team Carousel
-  if (teamCarousel) {
-    teamMembers.forEach((member) => {
-      const cardHTML = `
-        <div class="card">
-          <img src="${member.image}" alt="${member.name}" class="team-photo" loading="lazy">
-          <h3>${member.name}</h3>
-          <p>${member.role}</p>
-        </div>
-      `;
-      teamCarousel.insertAdjacentHTML("beforeend", cardHTML);
-    });
   }
 });
