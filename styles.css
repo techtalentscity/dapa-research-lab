@@ -38,13 +38,6 @@ body {
     text-align: center;
 }
   
-/* Global Styles */
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-}
-
 /* Header Styles */
 .main-header {
     display: flex;
@@ -98,7 +91,7 @@ body {
     display: none;
 }
 
-#check {
+.check {
     display: none;
 }
 
@@ -152,7 +145,7 @@ body {
         font-size: 20px;
     }
 
-    #check:checked ~ .nav-links {
+    .check:checked ~ .nav-links {
         right: 0;
     }
 
@@ -191,6 +184,7 @@ body {
         font-size: 0.9rem;
     }
 }
+
 
 /* Sections */
 .section {
