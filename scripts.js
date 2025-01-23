@@ -11,8 +11,18 @@ document.addEventListener("DOMContentLoaded", () => {
                     behavior: 'smooth'
                 });
             }
+            // Close the menu after scrolling
+            closeMenu();
         });
     });
+
+    // Close Menu Function
+    function closeMenu() {
+        const menuCheckbox = document.querySelector('.check');
+        if (menuCheckbox) {
+            menuCheckbox.checked = false;
+        }
+    }
 
     // Fade-In Animation Logic
     const fadeElements = document.querySelectorAll('.fade-in');
@@ -91,7 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
         { name: "John Smith", role: "Data Scientist", image: "images/nyarko.jpg" },
     ];
 
-    // Add placeholders for 17 additional members
+    // Add placeholders for additional team members
     for (let i = 4; i <= 20; i++) {
         teamMembers.push({
             name: `Team Member ${i}`,
