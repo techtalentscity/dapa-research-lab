@@ -1,136 +1,116 @@
 document.addEventListener("DOMContentLoaded", () => {
-  "use strict";
-
-  // Helper functions
-  const select = (el, all = false) => {
-    if (!el) return null; // Ensure selector is provided
-    el = el.trim();
-    return all ? [...document.querySelectorAll(el)] : document.querySelector(el);
-  };
-
-  const on = (type, el, listener, all = false) => {
-    const selectEl = select(el, all);
-    if (selectEl) {
-      if (all) {
-        selectEl.forEach((e) => e.addEventListener(type, listener));
-      } else {
-        selectEl.addEventListener(type, listener);
-      }
-    }
-  };
-
-  const scrollto = (el) => {
-    const header = select(".main-header");
-    const offset = header ? header.offsetHeight : 0;
-    const element = select(el);
-    if (!element) return; // Ensure element exists
-    const elementPos = element.offsetTop;
-    window.scrollTo({
-      top: elementPos - offset,
-      behavior: "smooth",
-    });
-  };
-
-  // Mobile nav toggle
-  on("click", ".mobile-nav-toggle", function () {
-    const navLinks = select(".nav-links");
-    if (navLinks) {
-      navLinks.classList.toggle("active");
-      this.classList.toggle("bi-list");
-      this.classList.toggle("bi-x");
-    }
-  });
-
-  // Scroll with offset on links with a class name .scrollto
-  on(
-    "click",
-    ".scrollto",
-    function (e) {
-      if (select(this.hash)) {
-        e.preventDefault();
-        scrollto(this.hash);
-      }
-    },
-    true
-  );
-
-  // Highlight active nav link on scroll
-  const highlightNavOnScroll = () => {
-    const position = window.scrollY + 200;
-    const sections = select("section", true);
-    const navLinks = select(".nav-links a", true);
-
-    if (!sections || !navLinks) return; // Ensure elements exist
-
-    sections.forEach((section) => {
-      if (
-        position >= section.offsetTop &&
-        position <= section.offsetTop + section.offsetHeight
-      ) {
-        navLinks.forEach((link) => {
-          link.classList.remove("active");
-          if (link.getAttribute("href").substring(1) === section.id) {
-            link.classList.add("active");
-          }
+    // Smooth Scrolling for Navigation Links
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute('href').substring(1);
+            const targetSection = document.getElementById(targetId);
+            if (targetSection) {
+                window.scrollTo({
+                    top: targetSection.offsetTop - 60, // Adjust for header height
+                    behavior: 'smooth'
+                });
+            }
         });
-      }
     });
-  };
-  window.addEventListener("scroll", highlightNavOnScroll);
 
-  // Scroll-to-Top Button
-  const scrollTopBtn = document.createElement("button");
-  scrollTopBtn.textContent = "↑";
-  scrollTopBtn.classList.add("scroll-to-top");
-  document.body.appendChild(scrollTopBtn);
+    // Fade-In Animation Logic
+    const fadeElements = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target); // Stop observing once visible
+            }
+        });
+    }, { threshold: 0.1 });
 
-  scrollTopBtn.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
+    fadeElements.forEach(el => observer.observe(el));
 
-  window.addEventListener("scroll", () => {
-    scrollTopBtn.style.display = window.scrollY > 300 ? "block" : "none";
-  });
+    // Carousel Arrow Functionality
+    const teamCarousel = document.querySelector('.team-carousel');
+    const leftArrow = document.querySelector('.left-arrow');
+    const rightArrow = document.querySelector('.right-arrow');
 
-  // Remove Preloader
-  const preloader = select("#preloader");
-  if (preloader) {
-    window.addEventListener("load", () => {
-      preloader.remove();
-    });
-  }
+    if (teamCarousel && leftArrow && rightArrow) {
+        // Scroll Left
+        leftArrow.addEventListener('click', () => {
+            teamCarousel.scrollBy({
+                left: -300, // Adjust scroll amount
+                behavior: 'smooth'
+            });
+        });
 
-  // Smooth scrolling on page load with hash links
-  window.addEventListener("load", () => {
-    if (window.location.hash) {
-      scrollto(window.location.hash);
+        // Scroll Right
+        rightArrow.addEventListener('click', () => {
+            teamCarousel.scrollBy({
+                left: 300, // Adjust scroll amount
+                behavior: 'smooth'
+            });
+        });
+    } else {
+        console.warn('Carousel or arrows not found in the DOM.');
     }
-  });
 
-  // Dynamic Header Styling on Scroll
-  const header = select(".main-header");
-  if (header) {
-    const toggleHeaderScrolled = () => {
-      if (window.scrollY > 100) {
-        header.classList.add("header-scrolled");
-      } else {
-        header.classList.remove("header-scrolled");
-      }
-    };
-    window.addEventListener("scroll", toggleHeaderScrolled);
-  }
+    // Active Link Highlighting for Navigation
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-links a');
 
-  // Carousel Arrow Functionality
-  const teamCarousel = select(".team-carousel");
-  const leftArrow = select(".left-arrow");
-  const rightArrow = select(".right-arrow");
-
-  if (teamCarousel && leftArrow && rightArrow) {
-    leftArrow.addEventListener("click", () => {
-      teamCarousel.scrollBy({ left: -300, behavior: "smooth" });
+    window.addEventListener('scroll', () => {
+        const scrollPos = window.scrollY + 100; // Adjust based on header height
+        sections.forEach(section => {
+            if (section.offsetTop <= scrollPos && (section.offsetTop + section.offsetHeight) > scrollPos) {
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').substring(1) === section.id) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+        });
     });
-    rightArrow.addEventListener("click", () => {
-      teamCarousel.scrollBy({ left: 300, behavior: "smooth" });
+
+    // Scroll-to-Top Button
+    const scrollTopBtn = document.createElement('button');
+    scrollTopBtn.textContent = '↑';
+    scrollTopBtn.classList.add('scroll-to-top');
+    document.body.appendChild(scrollTopBtn);
+
+    scrollTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     });
-  }
+
+    window.addEventListener('scroll', () => {
+        scrollTopBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
+    });
+
+    // Team Members Array
+    const teamMembers = [
+        { name: "Dr. Kofi Nyarko", role: "Director of DEPA Lab", image: "images/nyarko.jpg" },
+        { name: "Jane Doe", role: "Senior Research Assistant", image: "images/nyarko.jpg" },
+        { name: "John Smith", role: "Data Scientist", image: "images/nyarko.jpg" },
+    ];
+
+    // Add placeholders for 17 additional members
+    for (let i = 4; i <= 20; i++) {
+        teamMembers.push({
+            name: `Team Member ${i}`,
+            role: "Research Specialist",
+            image: "images/nyarko.jpg",
+        });
+    }
+
+    // Populate the Team Carousel
+    if (teamCarousel) {
+        teamMembers.forEach(member => {
+            const cardHTML = `
+                <div class="card">
+                    <img src="${member.image}" alt="${member.name}" class="team-photo">
+                    <h3>${member.name}</h3>
+                    <p>${member.role}</p>
+                </div>
+            `;
+            teamCarousel.insertAdjacentHTML('beforeend', cardHTML);
+        });
+    }
 });
