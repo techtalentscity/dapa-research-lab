@@ -38,7 +38,7 @@ body {
     text-align: center;
 }
 
-/* Header Styles */
+/* Main Header */
 .main-header {
     display: flex;
     align-items: center;
@@ -67,10 +67,6 @@ body {
     gap: 1.5rem;
 }
 
-.nav-links li {
-    margin: 0;
-}
-
 .nav-links li a {
     color: white;
     text-decoration: none;
@@ -84,15 +80,39 @@ body {
     border-radius: 5px;
 }
 
-/* Responsive Header Navigation */
+.mobile-nav-toggle {
+    display: none;
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+}
+
+/* Responsive Navigation */
 @media (max-width: 768px) {
     .nav-links {
+        display: none;
         flex-direction: column;
-        gap: 0.5rem;
+        background-color: #1a2b47;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 100%;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .mobile-nav-toggle {
+        display: block;
     }
 
     .nav-links li a {
-        font-size: 0.9rem;
+        font-size: 1rem;
+        padding: 1rem;
+        text-align: center;
     }
 }
 
@@ -100,8 +120,9 @@ body {
 .hero {
     background: url('images/depa2.jpeg') no-repeat center center/cover;
     color: white;
-    height: 70vh;
+    height: 80vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -109,8 +130,9 @@ body {
 }
 
 .hero h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     margin-bottom: 1rem;
+    animation: slideInOut 5s infinite;
 }
 
 .hero p {
@@ -131,6 +153,22 @@ body {
 
 .btn:hover {
     background-color: #13355b;
+}
+
+/* Responsive Hero Section */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .btn {
+        font-size: 0.9rem;
+        padding: 0.6rem 1rem;
+    }
 }
 
 /* Sections */
