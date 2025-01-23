@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-x: hidden;
 }
 
 .container {
@@ -102,7 +102,7 @@ body {
         top: 0;
         right: -100%;
         background-color: #1a2b47;
-        width: 60%; /* Reduce menu width */
+        width: 75%;
         height: 100vh;
         flex-direction: column;
         justify-content: center;
@@ -117,7 +117,7 @@ body {
     }
 
     .nav-links li a {
-        font-size: 18px;
+        font-size: 20px;
     }
 
     /* Show navigation when checkbox is checked */
@@ -134,12 +134,7 @@ body {
         width: 100vw;
         height: 100vh;
         background-color: rgba(0, 0, 0, 0.5);
-        z-index: 998; /* Behind the menu */
-    }
-
-    /* Close icon functionality */
-    .check:checked + label .fa-bars:before {
-        content: "\f00d"; /* Font Awesome "X" icon */
+        z-index: 998;
     }
 
     /* Ensure body remains scrollable */
