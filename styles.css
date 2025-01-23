@@ -38,13 +38,6 @@ body {
     text-align: center;
 }
 
-/* Global Styles */
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    overflow-x: hidden;
-}
 
 /* Header Styles */
 .main-header {
@@ -111,14 +104,14 @@ body {
         top: 0;
         right: -100%;
         background-color: #1a2b47;
-        width: 75%;
+        width: 60%; /* Reduce menu width */
         height: 100vh;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         transition: all 0.3s ease-in-out;
         box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
-        z-index: 999; /* Ensure it's above other elements */
+        z-index: 999;
     }
 
     .nav-links li {
@@ -126,16 +119,16 @@ body {
     }
 
     .nav-links li a {
-        font-size: 20px;
+        font-size: 18px;
     }
 
-    /* Open the menu */
+    /* Show navigation when checkbox is checked */
     .check:checked ~ nav .nav-links {
         right: 0;
     }
 
-    /* Backdrop to darken content */
-    .check:checked ~ nav .nav-links::before {
+    /* Add a backdrop to dim the background */
+    .check:checked ~ nav::before {
         content: '';
         position: fixed;
         top: 0;
@@ -143,12 +136,17 @@ body {
         width: 100vw;
         height: 100vh;
         background-color: rgba(0, 0, 0, 0.5);
-        z-index: -1;
+        z-index: 998; /* Behind the menu */
     }
 
-    /* Close button functionality */
+    /* Close icon functionality */
     .check:checked + label .fa-bars:before {
         content: "\f00d"; /* Font Awesome "X" icon */
+    }
+
+    /* Ensure body remains scrollable */
+    body {
+        overflow-y: auto;
     }
 }
 
