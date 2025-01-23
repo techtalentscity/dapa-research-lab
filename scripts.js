@@ -1,10 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
   "use strict";
 
-  /**
-   * Helper functions
-   */
+  // Helper functions
   const select = (el, all = false) => {
+    if (!el) return null; // Ensure selector is provided
     el = el.trim();
     return all ? [...document.querySelectorAll(el)] : document.querySelector(el);
   };
@@ -20,63 +19,48 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  /**
-   * Smooth scroll to an element with header offset
-   */
   const scrollto = (el) => {
     const header = select(".main-header");
     const offset = header ? header.offsetHeight : 0;
-    const elementPos = select(el).offsetTop;
+    const element = select(el);
+    if (!element) return; // Ensure element exists
+    const elementPos = element.offsetTop;
     window.scrollTo({
       top: elementPos - offset,
       behavior: "smooth",
     });
   };
 
-  /**
-   * Mobile nav toggle
-   */
+  // Mobile nav toggle
   on("click", ".mobile-nav-toggle", function () {
     const navLinks = select(".nav-links");
     if (navLinks) {
       navLinks.classList.toggle("active");
+      this.classList.toggle("bi-list");
+      this.classList.toggle("bi-x");
     }
-    this.classList.toggle("bi-list");
-    this.classList.toggle("bi-x");
   });
 
-  /**
-   * Scroll with offset on links with a class name .scrollto
-   */
+  // Scroll with offset on links with a class name .scrollto
   on(
     "click",
     ".scrollto",
     function (e) {
       if (select(this.hash)) {
         e.preventDefault();
-
-        const navLinks = select(".nav-links");
-        const mobileToggle = select(".mobile-nav-toggle");
-
-        if (navLinks && navLinks.classList.contains("active")) {
-          navLinks.classList.remove("active");
-          mobileToggle.classList.toggle("bi-list");
-          mobileToggle.classList.toggle("bi-x");
-        }
-
         scrollto(this.hash);
       }
     },
     true
   );
 
-  /**
-   * Highlight active nav link on scroll
-   */
+  // Highlight active nav link on scroll
   const highlightNavOnScroll = () => {
-    const position = window.scrollY + 200; // Adjust offset for active link
+    const position = window.scrollY + 200;
     const sections = select("section", true);
     const navLinks = select(".nav-links a", true);
+
+    if (!sections || !navLinks) return; // Ensure elements exist
 
     sections.forEach((section) => {
       if (
@@ -92,12 +76,9 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   };
-
   window.addEventListener("scroll", highlightNavOnScroll);
 
-  /**
-   * Scroll-to-Top Button
-   */
+  // Scroll-to-Top Button
   const scrollTopBtn = document.createElement("button");
   scrollTopBtn.textContent = "↑";
   scrollTopBtn.classList.add("scroll-to-top");
@@ -111,9 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
     scrollTopBtn.style.display = window.scrollY > 300 ? "block" : "none";
   });
 
-  /**
-   * Remove Preloader
-   */
+  // Remove Preloader
   const preloader = select("#preloader");
   if (preloader) {
     window.addEventListener("load", () => {
@@ -121,20 +100,14 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  /**
-   * Smooth scrolling on page load with hash links
-   */
+  // Smooth scrolling on page load with hash links
   window.addEventListener("load", () => {
     if (window.location.hash) {
-      if (select(window.location.hash)) {
-        scrollto(window.location.hash);
-      }
+      scrollto(window.location.hash);
     }
   });
 
-  /**
-   * Dynamic Header Styling on Scroll
-   */
+  // Dynamic Header Styling on Scroll
   const header = select(".main-header");
   if (header) {
     const toggleHeaderScrolled = () => {
@@ -144,34 +117,20 @@ document.addEventListener("DOMContentLoaded", () => {
         header.classList.remove("header-scrolled");
       }
     };
-    window.addEventListener("load", toggleHeaderScrolled);
     window.addEventListener("scroll", toggleHeaderScrolled);
   }
 
-  /**
-   * Carousel Arrow Functionality
-   */
+  // Carousel Arrow Functionality
   const teamCarousel = select(".team-carousel");
   const leftArrow = select(".left-arrow");
   const rightArrow = select(".right-arrow");
 
   if (teamCarousel && leftArrow && rightArrow) {
-    // Scroll Left
     leftArrow.addEventListener("click", () => {
-      teamCarousel.scrollBy({
-        left: -300, // Adjust scroll amount
-        behavior: "smooth",
-      });
+      teamCarousel.scrollBy({ left: -300, behavior: "smooth" });
     });
-
-    // Scroll Right
     rightArrow.addEventListener("click", () => {
-      teamCarousel.scrollBy({
-        left: 300, // Adjust scroll amount
-        behavior: "smooth",
-      });
+      teamCarousel.scrollBy({ left: 300, behavior: "smooth" });
     });
-  } else {
-    console.warn("Carousel or arrows not found in the DOM.");
   }
 });
