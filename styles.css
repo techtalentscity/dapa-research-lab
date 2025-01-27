@@ -759,3 +759,56 @@ footer p {
         font-size: 1rem;
     }
 }
+
+.academic-advisory {
+    background-color: #f9fbff; /* Light blue-white background */
+    color: #002d62; /* Deep blue text */
+    padding: 2rem;
+    margin-top: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.academic-advisory .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.academic-advisory .title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #002d62; /* Deep blue */
+    margin-bottom: 0.5rem;
+}
+
+.academic-advisory .subtitle {
+    font-size: 1.2rem;
+    color: #ff7f50; /* Touch of orange */
+    margin-bottom: 1.5rem;
+}
+
+.academic-advisory .content {
+    text-align: left;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #003d80; /* Slightly lighter blue for content */
+}
+
+.academic-advisory .content p {
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+    .academic-advisory {
+        padding: 1.5rem;
+    }
+
+    .academic-advisory .title {
+        font-size: 1.5rem;
+    }
+
+    .academic-advisory .subtitle {
+        font-size: 1rem;
+    }
+}
