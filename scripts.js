@@ -87,6 +87,26 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+    document.addEventListener("DOMContentLoaded", () => {
+        const fadeInSections = document.querySelectorAll(".fade-in");
+
+        const observer = new IntersectionObserver(
+            (entries, observer) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                        observer.unobserve(entry.target); // Stop observing once visible
+                    }
+                });
+            },
+            { threshold: 0.2 } // Trigger when 20% of the section is visible
+        );
+
+        fadeInSections.forEach((section) => {
+            observer.observe(section);
+        });
+    });
+
     // Scroll-to-Top Button
     const scrollTopBtn = document.createElement('button');
     scrollTopBtn.textContent = '↑';
