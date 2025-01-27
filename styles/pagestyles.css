@@ -1,1 +1,269 @@
+.academic-advisory {
+    background-color: #f9fbff; /* Light blue-white background */
+    color: #002d62; /* Deep blue text */
+    padding: 2rem;
+    margin-top: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
+.academic-advisory .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.academic-advisory .title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #002d62; /* Deep blue */
+    margin-bottom: 0.5rem;
+}
+
+.academic-advisory .subtitle {
+    font-size: 1.2rem;
+    color: #ff7f50; /* Touch of orange */
+    margin-bottom: 1.5rem;
+}
+
+.academic-advisory .content {
+    text-align: left;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #003d80; /* Slightly lighter blue for content */
+}
+
+.academic-advisory .content p {
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+    .academic-advisory {
+        padding: 1.5rem;
+    }
+
+    .academic-advisory .title {
+        font-size: 1.5rem;
+    }
+
+    .academic-advisory .subtitle {
+        font-size: 1rem;
+    }
+}
+.awards {
+    background-color: #f9fbff; /* Light blue background */
+    padding: 2rem;
+    margin-top: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.awards .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.awards .title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #002d62; /* Deep blue */
+    margin-bottom: 1rem;
+}
+
+.awards .subtitle {
+    font-size: 1.2rem;
+    color: #ff7f50; /* Touch of orange */
+    margin-bottom: 2rem;
+}
+
+.awards-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: left;
+}
+
+.award-item {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.award-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #002d62;
+    margin-bottom: 0.5rem;
+}
+
+.award-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #003d80; /* Slightly lighter blue */
+}
+
+@media (max-width: 768px) {
+    .awards-list {
+        gap: 1rem;
+    }
+
+    .award-title {
+        font-size: 1.25rem;
+    }
+
+    .award-description {
+        font-size: 0.95rem;
+    }
+}
+.publications {
+    background-color: #f9fbff; /* Light blue background */
+    padding: 2rem;
+    margin-top: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.publications .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.publications .title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #002d62; /* Deep blue */
+    margin-bottom: 1rem;
+}
+
+.publications .subtitle {
+    font-size: 1.2rem;
+    color: #ff7f50; /* Touch of orange */
+    margin-bottom: 2rem;
+}
+
+.publications-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: left;
+}
+
+.publication-item {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.publication-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #002d62;
+    margin-bottom: 0.5rem;
+}
+
+.publication-details {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #003d80; /* Slightly lighter blue */
+    margin-bottom: 0.5rem;
+}
+
+.publication-link {
+    color: #ff7f50; /* Touch of orange for link */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.publication-link:hover {
+    color: #ffa366; /* Slightly lighter orange on hover */
+}
+
+@media (max-width: 768px) {
+    .publications-list {
+        gap: 1rem;
+    }
+
+    .publication-title {
+        font-size: 1.25rem;
+    }
+
+    .publication-details {
+        font-size: 0.95rem;
+    }
+}
+.ceamls-symposium {
+    background-color: #f9fbff; /* Light blue background */
+    padding: 2rem;
+    margin-top: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ceamls-symposium .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.ceamls-symposium .title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #002d62; /* Deep blue */
+    margin-bottom: 1rem;
+}
+
+.ceamls-symposium .subtitle {
+    font-size: 1.2rem;
+    color: #ff7f50; /* Touch of orange */
+    margin-bottom: 2rem;
+}
+
+.ceamls-symposium .content {
+    text-align: left;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #003d80; /* Slightly lighter blue */
+}
+
+.ceamls-symposium .links {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.ceamls-symposium .symposium-link,
+.ceamls-symposium .ceamls-link {
+    display: inline-block;
+    background-color: #002d62; /* Deep blue */
+    color: #ffffff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.ceamls-symposium .symposium-link:hover,
+.ceamls-symposium .ceamls-link:hover {
+    background-color: #004a9f; /* Lighter blue on hover */
+}
+
+@media (max-width: 768px) {
+    .ceamls-symposium .content {
+        font-size: 0.95rem;
+    }
+
+    .ceamls-symposium .links a {
+        padding: 0.5rem 1rem;
+        font-size: 0.95rem;
+    }
+}
