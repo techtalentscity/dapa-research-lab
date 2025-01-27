@@ -1,25 +1,27 @@
-document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', (e) => {
-        const href = link.getAttribute('href');
-
-        // If the link is an anchor link to the current page
-        if (href.startsWith('#')) {
-            e.preventDefault(); // Prevent default navigation
-            const targetId = href.substring(1); // Remove the '#' to get the ID
-            const targetSection = document.getElementById(targetId);
-            if (targetSection) {
-                window.scrollTo({
-                    top: targetSection.offsetTop - 60, // Adjust for header height
-                    behavior: 'smooth'
-                });
+document.addEventListener("DOMContentLoaded", () => {
+    // Smooth Scrolling for Navigation Links
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', (e) => {
+            const href = link.getAttribute('href');
+            
+            // If the link is an anchor link to the current page
+            if (href.startsWith('#')) {
+                e.preventDefault(); // Prevent default navigation
+                const targetId = href.substring(1); // Remove the '#' to get the ID
+                const targetSection = document.getElementById(targetId);
+                if (targetSection) {
+                    window.scrollTo({
+                        top: targetSection.offsetTop - 60, // Adjust for header height
+                        behavior: 'smooth'
+                    });
+                }
+                closeMenu(); // Close the menu after scrolling
+            } else {
+                // Allow default behavior for full URLs or links to other pages
+                return;
             }
-            closeMenu(); // Close the menu after scrolling
-        } else {
-            // For external links or full URLs, allow default navigation
-            return;
-        }
+        });
     });
-});
 
     // Close Menu Function
     function closeMenu() {
