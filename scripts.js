@@ -1,9 +1,11 @@
-document.addEventListener("DOMContentLoaded", () => {
-    // Smooth Scrolling for Navigation Links
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            const targetId = link.getAttribute('href').substring(1);
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', (e) => {
+        const href = link.getAttribute('href');
+
+        // If the link is an anchor link to the current page
+        if (href.startsWith('#')) {
+            e.preventDefault(); // Prevent default navigation
+            const targetId = href.substring(1); // Remove the '#' to get the ID
             const targetSection = document.getElementById(targetId);
             if (targetSection) {
                 window.scrollTo({
@@ -11,10 +13,13 @@ document.addEventListener("DOMContentLoaded", () => {
                     behavior: 'smooth'
                 });
             }
-            // Close the menu after scrolling
-            closeMenu();
-        });
+            closeMenu(); // Close the menu after scrolling
+        } else {
+            // For external links or full URLs, allow default navigation
+            return;
+        }
     });
+});
 
     // Close Menu Function
     function closeMenu() {
