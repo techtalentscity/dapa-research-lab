@@ -812,3 +812,71 @@ footer p {
         font-size: 1rem;
     }
 }
+.awards {
+    background-color: #f9fbff; /* Light blue background */
+    padding: 2rem;
+    margin-top: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.awards .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.awards .title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #002d62; /* Deep blue */
+    margin-bottom: 1rem;
+}
+
+.awards .subtitle {
+    font-size: 1.2rem;
+    color: #ff7f50; /* Touch of orange */
+    margin-bottom: 2rem;
+}
+
+.awards-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: left;
+}
+
+.award-item {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.award-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #002d62;
+    margin-bottom: 0.5rem;
+}
+
+.award-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #003d80; /* Slightly lighter blue */
+}
+
+@media (max-width: 768px) {
+    .awards-list {
+        gap: 1rem;
+    }
+
+    .award-title {
+        font-size: 1.25rem;
+    }
+
+    .award-description {
+        font-size: 0.95rem;
+    }
+}
