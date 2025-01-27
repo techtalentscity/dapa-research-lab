@@ -880,3 +880,83 @@ footer p {
         font-size: 0.95rem;
     }
 }
+.publications {
+    background-color: #f9fbff; /* Light blue background */
+    padding: 2rem;
+    margin-top: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.publications .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.publications .title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #002d62; /* Deep blue */
+    margin-bottom: 1rem;
+}
+
+.publications .subtitle {
+    font-size: 1.2rem;
+    color: #ff7f50; /* Touch of orange */
+    margin-bottom: 2rem;
+}
+
+.publications-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: left;
+}
+
+.publication-item {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.publication-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #002d62;
+    margin-bottom: 0.5rem;
+}
+
+.publication-details {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #003d80; /* Slightly lighter blue */
+    margin-bottom: 0.5rem;
+}
+
+.publication-link {
+    color: #ff7f50; /* Touch of orange for link */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.publication-link:hover {
+    color: #ffa366; /* Slightly lighter orange on hover */
+}
+
+@media (max-width: 768px) {
+    .publications-list {
+        gap: 1rem;
+    }
+
+    .publication-title {
+        font-size: 1.25rem;
+    }
+
+    .publication-details {
+        font-size: 0.95rem;
+    }
+}
