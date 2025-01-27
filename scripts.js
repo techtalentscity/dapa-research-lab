@@ -16,9 +16,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     });
                 }
                 closeMenu(); // Close the menu after scrolling
-            } else {
-                // Allow default behavior for full URLs or links to other pages
-                return;
             }
         });
     });
@@ -40,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 observer.unobserve(entry.target); // Stop observing once visible
             }
         });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.2 });
 
     fadeElements.forEach(el => observer.observe(el));
 
@@ -50,7 +47,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const rightArrow = document.querySelector('.right-arrow');
 
     if (teamCarousel && leftArrow && rightArrow) {
-        // Scroll Left
         leftArrow.addEventListener('click', () => {
             teamCarousel.scrollBy({
                 left: -300, // Adjust scroll amount
@@ -58,7 +54,6 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
 
-        // Scroll Right
         rightArrow.addEventListener('click', () => {
             teamCarousel.scrollBy({
                 left: 300, // Adjust scroll amount
@@ -84,26 +79,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     }
                 });
             }
-        });
-    });
-
-    document.addEventListener("DOMContentLoaded", () => {
-        const fadeInSections = document.querySelectorAll(".fade-in");
-
-        const observer = new IntersectionObserver(
-            (entries, observer) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add("visible");
-                        observer.unobserve(entry.target); // Stop observing once visible
-                    }
-                });
-            },
-            { threshold: 0.2 } // Trigger when 20% of the section is visible
-        );
-
-        fadeInSections.forEach((section) => {
-            observer.observe(section);
         });
     });
 
