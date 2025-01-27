@@ -759,3 +759,27 @@ footer p {
         font-size: 1rem;
     }
 }
+/* Slide-in animation */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(50px); /* Start slightly below */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* End at the original position */
+    }
+}
+
+/* Apply animation when the element is visible */
+.fade-in {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: none;
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+/* Class to trigger animation */
+.fade-in.visible {
+    animation: slideIn 0.8s ease-out forwards;
+}
