@@ -104,18 +104,4 @@ document.addEventListener("DOMContentLoaded", () => {
     ];
 
     }
-
-    // Populate the Team Carousel
-    if (teamCarousel) {
-        teamMembers.forEach(member => {
-            const cardHTML = `
-                <div class="card">
-                    <img src="${member.image}" alt="${member.name}" class="team-photo">
-                    <h3>${member.name}</h3>
-                    <p>${member.role}</p>
-                </div>
-            `;
-            teamCarousel.insertAdjacentHTML('beforeend', cardHTML);
-        });
-    }
 });
