@@ -103,13 +103,6 @@ document.addEventListener("DOMContentLoaded", () => {
         { name: "John Smith", role: "Data Scientist", image: "images/nyarko.jpg" },
     ];
 
-    // Add placeholders for additional team members
-    for (let i = 4; i <= 20; i++) {
-        teamMembers.push({
-            name: `Team Member ${i}`,
-            role: "Research Specialist",
-            image: "images/nyarko.jpg",
-        });
     }
 
     // Populate the Team Carousel
