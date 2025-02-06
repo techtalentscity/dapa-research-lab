@@ -104,7 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ];
 
     // Add placeholders for additional team members
-    for (let i = 4; i <= 15; i++) {
+    for (let i = 4; i <= 16; i++) {
         teamMembers.push({
             name: Team Member ${i},
             role: "Research Specialist",
