@@ -96,27 +96,33 @@ document.addEventListener("DOMContentLoaded", () => {
         scrollTopBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
     });
 
-// Team Members Array
-const teamMembers = [
-    { name: "Dr. Kofi Nyarko", role: "Director of DEPA Lab", image: "images/nyarko.jpg" },
-    { name: "Jane Doe", role: "Senior Research Assistant", image: "images/doe.jpg" },
-    { name: "Opemeyi Adeniran", role: "AI Researcher", image: "images/adeniran.jpg" },
-    { name: "Ayah Hornick", role: "Research Assistant", image: "images/hornick.jpg" },
-];
+    // Team Members Array
+    const teamMembers = [
+        { name: "Dr. Kofi Nyarko", role: "Director of DEPA Lab", image: "images/nyarko.jpg" },
+        { name: "Jane Doe", role: "Senior Research Assistant", image: "images/nyarko.jpg" },
+        { name: "John Smith", role: "Data Scientist", image: "images/nyarko.jpg" },
+    ];
 
-// Populate the Team Carousel
-if (teamCarousel) {
-    teamCarousel.innerHTML = ""; // Clear any existing content in the carousel
-    teamMembers.forEach(member => {
-        const cardHTML = `
-            <div class="card">
-                <img src="${member.image}" alt="${member.name}" class="team-photo">
-                <h3>${member.name}</h3>
-                <p>${member.role}</p>
-            </div>
-        `;
-        teamCarousel.insertAdjacentHTML('beforeend', cardHTML);
-    });
- }
+    // Add placeholders for additional team members
+    for (let i = 4; i <= 15; i++) {
+        teamMembers.push({
+            name: Team Member ${i},
+            role: "Research Specialist",
+            image: "images/nyarko.jpg",
+        });
+    }
 
+    // Populate the Team Carousel
+    if (teamCarousel) {
+        teamMembers.forEach(member => {
+            const cardHTML = 
+                <div class="card">
+                    <img src="${member.image}" alt="${member.name}" class="team-photo">
+                    <h3>${member.name}</h3>
+                    <p>${member.role}</p>
+                </div>
+            ;
+            teamCarousel.insertAdjacentHTML('beforeend', cardHTML);
+        });
+    }
 });
