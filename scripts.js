@@ -104,9 +104,9 @@ document.addEventListener("DOMContentLoaded", () => {
     ];
 
     // Add placeholders for additional team members
-    for (let i = 4; i <= 16; i++) {
+    for (let i = 4; i <= 20; i++) {
         teamMembers.push({
-            name: Team Member ${i},
+            name: `Team Member ${i}`,
             role: "Research Specialist",
             image: "images/nyarko.jpg",
         });
@@ -115,13 +115,13 @@ document.addEventListener("DOMContentLoaded", () => {
     // Populate the Team Carousel
     if (teamCarousel) {
         teamMembers.forEach(member => {
-            const cardHTML = 
+            const cardHTML = `
                 <div class="card">
                     <img src="${member.image}" alt="${member.name}" class="team-photo">
                     <h3>${member.name}</h3>
                     <p>${member.role}</p>
                 </div>
-            ;
+            `;
             teamCarousel.insertAdjacentHTML('beforeend', cardHTML);
         });
     }
