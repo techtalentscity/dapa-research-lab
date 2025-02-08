@@ -2,31 +2,17 @@ document.addEventListener("DOMContentLoaded", () => {
     // Smooth Scrolling for Navigation Links
     document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', (e) => {
-            const href = link.getAttribute('href');
-            
-            // If the link is an anchor link to the current page
-            if (href.startsWith('#')) {
-                e.preventDefault(); // Prevent default navigation
-                const targetId = href.substring(1); // Remove the '#' to get the ID
-                const targetSection = document.getElementById(targetId);
-                if (targetSection) {
-                    window.scrollTo({
-                        top: targetSection.offsetTop - 60, // Adjust for header height
-                        behavior: 'smooth'
-                    });
-                }
-                closeMenu(); // Close the menu after scrolling
+            e.preventDefault();
+            const targetId = link.getAttribute('href').substring(1);
+            const targetSection = document.getElementById(targetId);
+            if (targetSection) {
+                window.scrollTo({
+                    top: targetSection.offsetTop - 60, // Adjust for header height
+                    behavior: 'smooth'
+                });
             }
         });
     });
-
-    // Close Menu Function
-    function closeMenu() {
-        const menuCheckbox = document.querySelector('.check');
-        if (menuCheckbox) {
-            menuCheckbox.checked = false;
-        }
-    }
 
     // Fade-In Animation Logic
     const fadeElements = document.querySelectorAll('.fade-in');
@@ -37,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 observer.unobserve(entry.target); // Stop observing once visible
             }
         });
-    }, { threshold: 0.2 });
+    }, { threshold: 0.1 });
 
     fadeElements.forEach(el => observer.observe(el));
 
@@ -47,6 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const rightArrow = document.querySelector('.right-arrow');
 
     if (teamCarousel && leftArrow && rightArrow) {
+        // Scroll Left
         leftArrow.addEventListener('click', () => {
             teamCarousel.scrollBy({
                 left: -300, // Adjust scroll amount
@@ -54,6 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
 
+        // Scroll Right
         rightArrow.addEventListener('click', () => {
             teamCarousel.scrollBy({
                 left: 300, // Adjust scroll amount
@@ -103,5 +91,26 @@ document.addEventListener("DOMContentLoaded", () => {
         { name: "John Smith", role: "Data Scientist", image: "images/nyarko.jpg" },
     ];
 
+    // Add placeholders for 17 additional members
+    for (let i = 4; i <= 20; i++) {
+        teamMembers.push({
+            name: `Team Member ${i}`,
+            role: "Research Specialist",
+            image: "images/nyarko.jpg",
+        });
+    }
+
+    // Populate the Team Carousel
+    if (teamCarousel) {
+        teamMembers.forEach(member => {
+            const cardHTML = `
+                <div class="card">
+                    <img src="${member.image}" alt="${member.name}" class="team-photo">
+                    <h3>${member.name}</h3>
+                    <p>${member.role}</p>
+                </div>
+            `;
+            teamCarousel.insertAdjacentHTML('beforeend', cardHTML);
+        });
     }
 });
