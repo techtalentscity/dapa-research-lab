@@ -86,9 +86,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Team Members Array
     const teamMembers = [
-        { name: "Dr. Kofi Nyarko", role: "Director of DEPA Lab", image: "images/nyarko.jpg" },
-        { name: "Jane Doe", role: "Senior Research Assistant", image: "images/nyarko.jpg" },
-        { name: "John Smith", role: "Data Scientist", image: "images/nyarko.jpg" },
+         { name: "Dr. Kofi Nyarko", role: "Director of DEPA Lab", image: "images/nyarko.jpg" },
+         { name: "Tasmeer Alam", role: "AI Researcher", image: "images/nyarko.jpg" },
+         { name: "Cynthia Nosiri", role: "AI Researcher", image: "images/Cynthia.jpeg" },
+         { name: "Derrick Cook", role: "Research Assistant", image: "images/Derrick_Cook.PNG" },
+         { name: "Rezoan Sultan", role: "Research Assistant", image: "images/Rezoan_Sultan.jpeg" },
+         { name: "Benjamin Hall", role: "Researcher", image: "images/Benjamin Hall.jpg" },
+         { name: "Emmanuel Masa-ibi", role: "Research Assistant", image: "images/Emmanuel Masa-ibi.jpeg" },
+         { name: "Ekata Dhital", role: "Research Assistant", image: "images/Ekata Dhital.JPG" },
+         { name: "Awotwi Baffoe", role: "Research Assistant", image: "images/Awotwi_Baffoe.jpg },
+         { name: "Opeyemi Adeniran", role: "Research Assistant", image: "images/Opeyemi.PNG" },
+         { name: "Anjolie Anthony", role: "Researcher, image: "images/Tanayah hornick.JPG" },
+         { name: "Kelechi Nwachukwu", role: "Researcher, image: "images/Tanayah hornick.JPG"},
+         { name: "David Nyarko", role: "Research Assistant", image: "images/Tanayah hornick.JPG"},
     ];
 
     // Add placeholders for 17 additional members
