@@ -96,9 +96,10 @@ document.addEventListener("DOMContentLoaded", () => {
          { name: "Ekata Dhital", role: "Research Assistant", image: "images/Ekata Dhital.JPG" },
          { name: "Awotwi Baffoe", role: "Research Assistant", image: "images/Awotwi_Baffoe.jpg },
          { name: "Opeyemi Adeniran", role: "Research Assistant", image: "images/Opeyemi.PNG" },
-         { name: "Anjolie Anthony", role: "Researcher, image: "images/Tasmeer_Alam.jpeg"},
-         { name: "Kelechi Nwachukwu", role: "Researcher, image: "images/Tasmeer_Alam.jpeg"},
+         { name: "Anjolie Anthony", role: "Researcher", image: "images/Tasmeer_Alam.jpeg"},
+         { name: "Kelechi Nwachukwu", role: "Researcher", image: "images/Tasmeer_Alam.jpeg"},
          { name: "David Nyarko", role: "Research Assistant", image: "images/Tasmeer_Alam.jpeg"},
+         { name: "Chukwuemeka Duru", role: "Research Assistant", image: "images/Tasmeer_Alam.jpeg"},
     ];
 
     // Add placeholders for 17 additional members
