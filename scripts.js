@@ -14,6 +14,24 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+    // Mobile Menu Toggle
+    const checkBtn = document.querySelector('.checkbtn');
+    const navLinks = document.querySelector('.nav-links');
+    
+    if (checkBtn && navLinks) {
+        checkBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                document.querySelector('.check').checked = false;
+            });
+        });
+    }
+
     // Fade-In Animation Logic
     const fadeElements = document.querySelectorAll('.fade-in');
     const observer = new IntersectionObserver((entries) => {
@@ -48,19 +66,34 @@ document.addEventListener("DOMContentLoaded", () => {
                 behavior: 'smooth'
             });
         });
-    } else {
-        console.warn('Carousel or arrows not found in the DOM.');
+
+        // Handle keyboard navigation for accessibility
+        teamCarousel.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                teamCarousel.scrollBy({
+                    left: -300,
+                    behavior: 'smooth'
+                });
+            } else if (e.key === 'ArrowRight') {
+                e.preventDefault();
+                teamCarousel.scrollBy({
+                    left: 300,
+                    behavior: 'smooth'
+                });
+            }
+        });
     }
 
     // Active Link Highlighting for Navigation
     const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('.nav-links a');
+    const navLinksArray = document.querySelectorAll('.nav-links a');
 
     window.addEventListener('scroll', () => {
         const scrollPos = window.scrollY + 100; // Adjust based on header height
         sections.forEach(section => {
             if (section.offsetTop <= scrollPos && (section.offsetTop + section.offsetHeight) > scrollPos) {
-                navLinks.forEach(link => {
+                navLinksArray.forEach(link => {
                     link.classList.remove('active');
                     if (link.getAttribute('href').substring(1) === section.id) {
                         link.classList.add('active');
@@ -74,10 +107,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const scrollTopBtn = document.createElement('button');
     scrollTopBtn.textContent = '↑';
     scrollTopBtn.classList.add('scroll-to-top');
+    scrollTopBtn.setAttribute('aria-label', 'Scroll to top');
     document.body.appendChild(scrollTopBtn);
 
     scrollTopBtn.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        window.scrollTo({ 
+            top: 0, 
+            behavior: 'smooth' 
+        });
     });
 
     window.addEventListener('scroll', () => {
@@ -86,37 +123,87 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Team Members Array
     const teamMembers = [
-         { name: "Dr. Kofi Nyarko", role: "Director of DEPA Lab", image: "images/nyarko.jpg" },
-         { name: "Tasmeer Alam", role: "AI Researcher", image: "images/nyarko.jpg" },
-         { name: "Cynthia Nosiri", role: "AI Researcher", image: "images/Cynthia.jpeg" },
-         { name: "Derrick Cook", role: "Research Assistant", image: "images/Derrick_Cook.PNG" },
-         { name: "Rezoan Sultan", role: "Research Assistant", image: "images/Rezoan_Sultan.jpeg" },
-         { name: "Benjamin Hall", role: "Researcher", image: "images/Benjamin Hall.jpg" },
-         { name: "Emmanuel Masa-ibi", role: "Research Assistant", image: "images/Emmanuel Masa-ibi.jpeg" },
-         { name: "Ekata Dhital", role: "Research Assistant", image: "images/Ekata Dhital.JPG" },
-         { name: "Awotwi Baffoe", role: "Research Assistant", image: "images/Awotwi_Baffoe.jpg },
-         { name: "Opeyemi Adeniran", role: "Research Assistant", image: "images/Opeyemi.PNG" },
-         { name: "Anjolie Anthony", role: "Researcher", image: "images/Tasmeer_Alam.jpeg"},
-         { name: "Kelechi Nwachukwu", role: "Researcher", image: "images/Tasmeer_Alam.jpeg"},
-         { name: "David Nyarko", role: "Research Assistant", image: "images/Tasmeer_Alam.jpeg"},
-         { name: "Chukwuemeka Duru", role: "Research Assistant", image: "images/Tasmeer_Alam.jpeg"},
+        {
+            name: "Dr. Kofi Nyarko",
+            role: "Director of DEPA Lab",
+            image: "images/nyarko.jpg"
+        },
+        {
+            name: "Tasmeer Alam",
+            role: "AI Researcher",
+            image: "images/Tasmeer_Alam.jpeg"
+        },
+        {
+            name: "Cynthia Nosiri",
+            role: "AI Researcher",
+            image: "images/Cynthia.jpeg"
+        },
+        {
+            name: "Derrick Cook",
+            role: "Research Assistant",
+            image: "images/Derrick_Cook.PNG"
+        },
+        {
+            name: "Rezoan Sultan",
+            role: "Research Assistant",
+            image: "images/Rezoan_Sultan.jpeg"
+        },
+        {
+            name: "Benjamin Hall",
+            role: "Researcher",
+            image: "images/Benjamin Hall.jpg"
+        },
+        {
+            name: "Emmanuel Masa-ibi",
+            role: "Research Assistant",
+            image: "images/Emmanuel Masa-ibi.jpeg"
+        },
+        {
+            name: "Ekata Dhital",
+            role: "Research Assistant",
+            image: "images/Ekata Dhital.JPG"
+        },
+        {
+            name: "Awotwi Baffoe",
+            role: "Research Assistant",
+            image: "images/Awotwi_Baffoe.jpg"
+        },
+        {
+            name: "Opeyemi Adeniran",
+            role: "Research Assistant",
+            image: "images/Opeyemi.PNG"
+        },
+        {
+            name: "Anjolie Anthony",
+            role: "Researcher",
+            image: "images/Tasmeer_Alam.jpeg"
+        },
+        {
+            name: "Kelechi Nwachukwu",
+            role: "Researcher",
+            image: "images/Tasmeer_Alam.jpeg"
+        },
+        {
+            name: "David Nyarko",
+            role: "Research Assistant",
+            image: "images/Tasmeer_Alam.jpeg"
+        },
+        {
+            name: "Chukwuemeka Duru",
+            role: "Research Assistant",
+            image: "images/Tasmeer_Alam.jpeg"
+        }
     ];
-
-    // Add placeholders for 17 additional members
-    for (let i = 4; i <= 20; i++) {
-        teamMembers.push({
-            name: `Team Member ${i}`,
-            role: "Research Specialist",
-            image: "images/nyarko.jpg",
-        });
-    }
 
     // Populate the Team Carousel
     if (teamCarousel) {
         teamMembers.forEach(member => {
             const cardHTML = `
-                <div class="card">
-                    <img src="${member.image}" alt="${member.name}" class="team-photo">
+                <div class="card" tabindex="0">
+                    <img src="${member.image}" 
+                         alt="${member.name}" 
+                         class="team-photo"
+                         onerror="this.src='images/placeholder.jpg'">
                     <h3>${member.name}</h3>
                     <p>${member.role}</p>
                 </div>
