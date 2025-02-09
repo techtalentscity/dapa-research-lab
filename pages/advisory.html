@@ -3,74 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DEPA</title>
+    <title>DEPA - Academic Advisory System</title>
     
-    <!-- Fonts styles -->
+    <!-- Fonts & Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
- 
-    <!-- General styles -->
-    <link rel="stylesheet" href="https://techtalentscity.github.io/dapa-research-lab/styles.css">
-
-    <!-- Pages styles -->
-    <link rel="stylesheet" href="https://techtalentscity.github.io/dapa-research-lab/styles/pagestyles.css">
-
-    <!-- jscripts -->
-    <script defer src="https://techtalentscity.github.io/dapa-research-lab/scripts.js"></script>
-</head>
-
-<body>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-<header class="main-header">
-    <a href="https://techtalentscity.github.io/dapa-research-lab/index.html#hero" class="logo">DEPA Lab</a>
-    <!-- Checkbox for toggling the menu -->
-    <input type="checkbox" class="check" id="check">
-    <!-- Label for the hamburger menu -->
-    <label for="check" class="checkbtn">
-        <i class="fas fa-bars"></i>
-    </label>
-    <!-- Navigation -->
-    <nav>
-        <ul class="nav-links">
-          <li><a href="https://techtalentscity.github.io/dapa-research-lab/index.html#about">About</a></li>
-          <li><a href="https://techtalentscity.github.io/dapa-research-lab/index.html#research">Research</a></li>
-          <li><a href="https://techtalentscity.github.io/dapa-research-lab/index.html#innovation">Innovation</a></li>
-          <li><a href="https://techtalentscity.github.io/dapa-research-lab/index.html#events">Events</a></li>
-          <li><a href="https://techtalentscity.github.io/dapa-research-lab/index.html#team">Team</a></li>
-          <li><a href="https://techtalentscity.github.io/dapa-research-lab/index.html#contact">Contact</a></li>
-      </ul>
- </nav>
-</header>
-
-<!-- Header -->
-
-    <!-- Academic Advisory System Section -->
-<section class="academic-advisory" id="research-contents">
-    <div class="container">
-        <h2 class="title">AI-powered University Advisory System</h2>
-        <p class="subtitle">Using Generative AI and Large Language Models (LLM) for Personalized Academic and Career Guidance</p>
-        <div class="content">
-            <p>
-                This project focuses on the development of an AI-powered academic advisor, designed to provide personalized and context-aware academic and career guidance.
-                By integrating LLM fine-tuning, knowledge distillation, and hybrid embedding-based retrieval, this system dynamically interprets student degree works, course plans, 
-                and institutional policies to deliver highly tailored recommendations.
-            </p>
-            <p>
-                Additionally, this research explores cutting-edge technologies, including multi-modal learning, scalable inference, prompt engineering optimization, and domain-specific adaptation. 
-                These innovations aim to push the boundaries of LLMs in real-world applications.
-            </p>
-            <p>
-                Key focus areas include improving model efficiency, reducing hallucinations, and enhancing knowledge-grounded reasoning, making this advisory system a robust tool for academic and career decision-making.
-            </p>
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles/pagestyles.css">
+    
+    <!-- Scripts -->
+    <script defer src="scripts.js"></script>
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="DEPA Lab" class="logo-img">
+                <span class="logo-text">DEPA Lab</span>
+            </a>
+            
+            <input type="checkbox" class="nav-toggle" id="nav-toggle">
+            <label for="nav-toggle" class="nav-toggle-label">
+                <span class="hamburger"></span>
+            </label>
+            
+            <nav class="main-nav">
+                <ul class="nav-links">
+                    <li><a href="index.html#about" class="nav-link">About</a></li>
+                    <li><a href="index.html#research" class="nav-link">Research</a></li>
+                    <li><a href="index.html#innovation" class="nav-link">Innovation</a></li>
+                    <li><a href="index.html#events" class="nav-link">Events</a></li>
+                    <li><a href="index.html#team" class="nav-link">Team</a></li>
+                    <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
         </div>
-    </div>
-</section>
+    </header>
 
+    <main>
+        <!-- Banner Section -->
+        <section class="page-banner" role="banner">
+            <div class="banner-overlay"></div>
+            <div class="banner-content">
+                <h1 class="banner-title">AI-powered University Advisory System</h1>
+                <p class="banner-subtitle">Advancing Academic Guidance through Artificial Intelligence</p>
+            </div>
+        </section>
 
-    <!-- Footer -->
-    <footer>
+        <!-- Content Section -->
+        <section class="academic-advisory" id="research-contents">
+            <div class="container">
+                <h2 class="section-title">Research Overview</h2>
+                <p class="section-subtitle">Using Generative AI and Large Language Models (LLM) for Personalized Academic and Career Guidance</p>
+                
+                <div class="content-grid">
+                    <div class="content-card">
+                        <div class="card-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>AI-Powered Guidance</h3>
+                        <p>This project focuses on developing an AI-powered academic advisor, designed to provide personalized and context-aware academic and career guidance. Using advanced LLM fine-tuning and knowledge distillation techniques.</p>
+                    </div>
+
+                    <div class="content-card">
+                        <div class="card-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h3>Advanced Technologies</h3>
+                        <p>Exploring cutting-edge technologies including multi-modal learning, scalable inference, prompt engineering optimization, and domain-specific adaptation to push the boundaries of LLMs in real-world applications.</p>
+                    </div>
+
+                    <div class="content-card">
+                        <div class="card-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Key Improvements</h3>
+                        <p>Focusing on improving model efficiency, reducing hallucinations, and enhancing knowledge-grounded reasoning to create a robust tool for academic and career decision-making.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
         <div class="container">
-            <p>© 2025 DEPA Research Lab. All rights reserved.</p>
+            <div class="footer-content">
+                <div class="footer-info">
+                    <p>&copy; 2025 DEPA Research Lab. All rights reserved.</p>
+                </div>
+                <div class="footer-social">
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
         </div>
     </footer>
+
+    <!-- Scroll to top button -->
+    <button class="scroll-top" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 </body>
 </html>
