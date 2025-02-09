@@ -1,238 +1,141 @@
-
-.academic-advisory {
-    background-color: #f9fbff; /* Light blue-white background */
-    color: #002d62; /* Deep blue text */
-    padding: 2rem;
-    margin-top: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+/* Root Variables */
+:root {
+    --primary-color: #002d62;
+    --secondary-color: #003d80;
+    --accent-color: #ff7f50;
+    --accent-hover: #ffa366;
+    --background-light: #f9fbff;
+    --text-color: #002d62;
+    --white: #ffffff;
+    --header-height: 70px;
+    --container-width: 1200px;
+    --transition-speed: 0.3s;
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --border-radius: 8px;
 }
 
-.academic-advisory .container {
-    max-width: 1200px;
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--white);
+}
+
+.container {
+    max-width: var(--container-width);
     margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Common Section Styles */
+.section {
+    background-color: var(--background-light);
+    padding: 2rem;
+    margin-top: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+}
+
+.title {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
     text-align: center;
 }
 
-.academic-advisory .title {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #002d62; /* Deep blue */
-    margin-bottom: 0.5rem;
+.subtitle {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: var(--accent-color);
+    margin-bottom: 2rem;
+    text-align: center;
 }
 
-.academic-advisory .subtitle {
-    font-size: 1.2rem;
-    color: #ff7f50; /* Touch of orange */
-    margin-bottom: 1.5rem;
-}
-
-.academic-advisory .content {
+/* Content Layouts */
+.content {
     text-align: left;
     font-size: 1rem;
     line-height: 1.6;
-    color: #003d80; /* Slightly lighter blue for content */
+    color: var(--secondary-color);
 }
 
-.academic-advisory .content p {
+.content p {
     margin-bottom: 1rem;
 }
 
-@media (max-width: 768px) {
-    .academic-advisory {
-        padding: 1.5rem;
-    }
-
-    .academic-advisory .title {
-        font-size: 1.5rem;
-    }
-
-    .academic-advisory .subtitle {
-        font-size: 1rem;
-    }
-}
-.awards {
-    background-color: #f9fbff; /* Light blue background */
-    padding: 2rem;
-    margin-top: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.awards .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.awards .title {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #002d62; /* Deep blue */
-    margin-bottom: 1rem;
-}
-
-.awards .subtitle {
-    font-size: 1.2rem;
-    color: #ff7f50; /* Touch of orange */
-    margin-bottom: 2rem;
-}
-
-.awards-list {
+/* List Layouts */
+.item-list {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
     text-align: left;
+}
+
+.list-item {
+    background-color: var(--white);
+    border: 1px solid #e0e0e0;
+    border-radius: var(--border-radius);
+    padding: 1rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.item-title {
+    font-size: clamp(1.25rem, 2vw, 1.5rem);
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.item-description {
+    font-size: clamp(0.95rem, 1.5vw, 1rem);
+    line-height: 1.6;
+    color: var(--secondary-color);
+}
+
+/* Specific Section Styles */
+/* Academic Advisory */
+.academic-advisory {
+    text-align: center;
+}
+
+/* Awards Section */
+.awards-list {
+    composes: item-list;
 }
 
 .award-item {
-    background-color: #ffffff;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    padding: 1rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    composes: list-item;
 }
 
-.award-title {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #002d62;
-    margin-bottom: 0.5rem;
-}
-
-.award-description {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #003d80; /* Slightly lighter blue */
-}
-
-@media (max-width: 768px) {
-    .awards-list {
-        gap: 1rem;
-    }
-
-    .award-title {
-        font-size: 1.25rem;
-    }
-
-    .award-description {
-        font-size: 0.95rem;
-    }
-}
-.publications {
-    background-color: #f9fbff; /* Light blue background */
-    padding: 2rem;
-    margin-top: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.publications .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.publications .title {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #002d62; /* Deep blue */
-    margin-bottom: 1rem;
-}
-
-.publications .subtitle {
-    font-size: 1.2rem;
-    color: #ff7f50; /* Touch of orange */
-    margin-bottom: 2rem;
-}
-
+/* Publications Section */
 .publications-list {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    text-align: left;
+    composes: item-list;
 }
 
 .publication-item {
-    background-color: #ffffff;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    padding: 1rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.publication-title {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #002d62;
-    margin-bottom: 0.5rem;
-}
-
-.publication-details {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #003d80; /* Slightly lighter blue */
-    margin-bottom: 0.5rem;
+    composes: list-item;
 }
 
 .publication-link {
-    color: #ff7f50; /* Touch of orange for link */
+    color: var(--accent-color);
     text-decoration: none;
     font-weight: bold;
-    transition: color 0.3s;
+    transition: color var(--transition-speed);
 }
 
 .publication-link:hover {
-    color: #ffa366; /* Slightly lighter orange on hover */
+    color: var(--accent-hover);
 }
 
-@media (max-width: 768px) {
-    .publications-list {
-        gap: 1rem;
-    }
-
-    .publication-title {
-        font-size: 1.25rem;
-    }
-
-    .publication-details {
-        font-size: 0.95rem;
-    }
-}
-.ceamls-symposium {
-    background-color: #f9fbff; /* Light blue background */
-    padding: 2rem;
-    margin-top: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.ceamls-symposium .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.ceamls-symposium .title {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #002d62; /* Deep blue */
-    margin-bottom: 1rem;
-}
-
-.ceamls-symposium .subtitle {
-    font-size: 1.2rem;
-    color: #ff7f50; /* Touch of orange */
-    margin-bottom: 2rem;
-}
-
-.ceamls-symposium .content {
-    text-align: left;
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #003d80; /* Slightly lighter blue */
-}
-
+/* CEAMLS Symposium */
 .ceamls-symposium .links {
     margin-top: 1.5rem;
     display: flex;
@@ -241,30 +144,67 @@
     flex-wrap: wrap;
 }
 
-.ceamls-symposium .symposium-link,
-.ceamls-symposium .ceamls-link {
+.button-link {
     display: inline-block;
-    background-color: #002d62; /* Deep blue */
-    color: #ffffff;
+    background-color: var(--primary-color);
+    color: var(--white);
     padding: 0.75rem 1.5rem;
     border-radius: 6px;
     text-decoration: none;
     font-weight: bold;
-    transition: background-color 0.3s;
+    transition: background-color var(--transition-speed);
 }
 
-.ceamls-symposium .symposium-link:hover,
-.ceamls-symposium .ceamls-link:hover {
-    background-color: #004a9f; /* Lighter blue on hover */
+.button-link:hover {
+    background-color: var(--secondary-color);
 }
 
+/* Responsive Design */
 @media (max-width: 768px) {
-    .ceamls-symposium .content {
-        font-size: 0.95rem;
+    .container {
+        padding: 0 1.5rem;
     }
 
-    .ceamls-symposium .links a {
+    .section {
+        padding: 1.5rem;
+    }
+
+    .item-list {
+        gap: 1rem;
+    }
+
+    .button-link {
         padding: 0.5rem 1rem;
         font-size: 0.95rem;
+    }
+}
+
+/* Animations */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity var(--transition-speed),
+                transform var(--transition-speed);
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+    :root {
+        --primary-color: #001f44;
+        --secondary-color: #002d62;
+        --accent-color: #e65d2e;
     }
 }
