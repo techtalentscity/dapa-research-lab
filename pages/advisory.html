@@ -212,12 +212,20 @@
         }
 
         @media (max-width: 768px) {
-            .nav-toggle {
-                display: block;
-                position: absolute;
-                right: 1rem;
-                top: 1rem;
-                z-index: 1001;
+            .nav-toggle,
+            .nav-toggle-label {
+                display: none;
+            }
+
+            @media (max-width: 768px) {
+                .nav-toggle-label {
+                    display: block;
+                    position: absolute;
+                    right: 1rem;
+                    top: 1rem;
+                    z-index: 1001;
+                    cursor: pointer;
+                }
             }
 
             .nav-links {
@@ -254,7 +262,7 @@
 <body>
     <header class="main-header">
         <div class="header-container">
-            <a href="index.html" class="logo">
+            <a href="/" class="logo">
                 <img src="/api/placeholder/40/40" alt="DEPA Lab" class="logo-img">
                 <span class="logo-text">DEPA Lab</span>
             </a>
@@ -266,12 +274,12 @@
             
             <nav class="main-nav">
                 <ul class="nav-links">
-                    <li><a href="index.html#about" class="nav-link">About</a></li>
-                    <li><a href="index.html#research" class="nav-link">Research</a></li>
-                    <li><a href="index.html#innovation" class="nav-link">Innovation</a></li>
-                    <li><a href="index.html#events" class="nav-link">Events</a></li>
-                    <li><a href="index.html#team" class="nav-link">Team</a></li>
-                    <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                    <li><a href="/" class="nav-link">About</a></li>
+                    <li><a href="/" class="nav-link">Research</a></li>
+                    <li><a href="/" class="nav-link">Innovation</a></li>
+                    <li><a href="/" class="nav-link">Events</a></li>
+                    <li><a href="/" class="nav-link">Team</a></li>
+                    <li><a href="/" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
         </div>
