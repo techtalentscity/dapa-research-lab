@@ -61,17 +61,16 @@
     font-size: 1.1rem;
 }
 
-/* Grid and Cards */
-.content-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+/* Content Single Card */
+.content-single {
+    max-width: 800px;
+    margin: 0 auto;
     padding: 1rem;
 }
 
 .content-card {
     background: var(--white);
-    padding: 2rem;
+    padding: 2.5rem;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
@@ -84,20 +83,22 @@
 .card-icon {
     font-size: 2.5rem;
     color: var(--secondary-color);
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     text-align: center;
 }
 
 .content-card h3 {
     color: var(--primary-color);
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.75rem;
     text-align: center;
 }
 
 .content-card p {
     color: var(--text-color);
-    line-height: 1.6;
+    line-height: 1.8;
+    font-size: 1.1rem;
+    text-align: justify;
 }
 
 /* Footer */
@@ -141,8 +142,21 @@
         font-size: 1rem;
     }
 
-    .content-grid {
-        grid-template-columns: 1fr;
+    .content-single {
+        padding: 1rem 0.5rem;
+    }
+
+    .content-card {
+        padding: 2rem;
+    }
+
+    .content-card h3 {
+        font-size: 1.5rem;
+    }
+
+    .content-card p {
+        font-size: 1rem;
+        line-height: 1.6;
     }
 
     .footer-content {
@@ -162,9 +176,5 @@
 
     .academic-advisory {
         padding: 3rem 1rem;
-    }
-
-    .content-card {
-        padding: 1.5rem;
     }
 }
