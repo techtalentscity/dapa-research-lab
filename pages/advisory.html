@@ -217,6 +217,11 @@
                 display: none;
             }
 
+            .nav-links {
+                display: flex;
+                gap: 2rem;
+            }
+
             @media (max-width: 768px) {
                 .nav-toggle-label {
                     display: block;
@@ -226,18 +231,23 @@
                     z-index: 1001;
                     cursor: pointer;
                 }
-            }
 
-            .nav-links {
-                display: none;
-                position: fixed;
-                top: 72px;
-                left: 0;
-                right: 0;
-                background: var(--white);
-                flex-direction: column;
-                padding: 1rem;
-                text-align: center;
+                .nav-links {
+                    display: none;
+                    position: fixed;
+                    top: 72px;
+                    left: 0;
+                    right: 0;
+                    background: var(--white);
+                    flex-direction: column;
+                    padding: 1rem;
+                    text-align: center;
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                }
+
+                .nav-toggle:checked ~ .nav-links {
+                    display: flex;
+                }
             }
 
             .nav-toggle:checked ~ .nav-links {
@@ -262,7 +272,7 @@
 <body>
     <header class="main-header">
         <div class="header-container">
-            <a href="/" class="logo">
+            <a href="index.html" class="logo">
                 <img src="/api/placeholder/40/40" alt="DEPA Lab" class="logo-img">
                 <span class="logo-text">DEPA Lab</span>
             </a>
@@ -274,12 +284,12 @@
             
             <nav class="main-nav">
                 <ul class="nav-links">
-                    <li><a href="/" class="nav-link">About</a></li>
-                    <li><a href="/" class="nav-link">Research</a></li>
-                    <li><a href="/" class="nav-link">Innovation</a></li>
-                    <li><a href="/" class="nav-link">Events</a></li>
-                    <li><a href="/" class="nav-link">Team</a></li>
-                    <li><a href="/" class="nav-link">Contact</a></li>
+                    <li><a href="/#about" class="nav-link">About</a></li>
+                    <li><a href="/#research" class="nav-link">Research</a></li>
+                    <li><a href="/#innovation" class="nav-link">Innovation</a></li>
+                    <li><a href="/#events" class="nav-link">Events</a></li>
+                    <li><a href="/#team" class="nav-link">Team</a></li>
+                    <li><a href="/#contact" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
         </div>
