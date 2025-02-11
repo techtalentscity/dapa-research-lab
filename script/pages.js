@@ -1,25 +1,35 @@
-    <script>
-        // Scroll to top button visibility
-        const scrollBtn = document.querySelector('.scroll-top');
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                scrollBtn.classList.add('visible');
-            } else {
-                scrollBtn.classList.remove('visible');
+document.addEventListener('DOMContentLoaded', () => {
+    // Get all navigation links
+    const navLinks = document.querySelectorAll('.nav-links a');
+    
+    // Add click event listener to each link
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            // Get the target section id from the href
+            const targetId = this.getAttribute('href').split('#')[1];
+            
+            // If we're on a different page and have a section id
+            if (window.location.pathname.includes('pages/') && targetId) {
+                window.location.href = `../index.html#${targetId}`;
+            }
+            
+            // If we're on the main page
+            if (targetId && !window.location.pathname.includes('pages/')) {
+                e.preventDefault();
+                const targetSection = document.getElementById(targetId);
+                if (targetSection) {
+                    targetSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            }
+            
+            // Close mobile menu
+            const checkbox = document.getElementById('check');
+            if (checkbox) {
+                checkbox.checked = false;
             }
         });
-
-        scrollBtn.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-
-        // Mobile menu toggle
-        const navToggle = document.getElementById('nav-toggle');
-        const navLinks = document.querySelector('.nav-links');
-        
-        navLinks.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                navToggle.checked = false;
-            });
-        });
-    </script>
+    });
+});
