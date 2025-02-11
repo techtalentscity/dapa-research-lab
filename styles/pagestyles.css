@@ -1,5 +1,5 @@
-/* Page-Specific Styles */
-.academic-advisory, .awards, .publications, .ceamls-symposium {
+/* Page-Specific Styles for Advisory Page */
+.advisory-page {
     background-color: #f9fbff;
     padding: 2rem;
     margin-top: 2rem;
@@ -8,105 +8,69 @@
     text-align: center;
 }
 
-.academic-advisory .title, .awards .title, .publications .title, .ceamls-symposium .title {
+.advisory-page .title {
     font-size: 2rem;
     font-weight: bold;
     color: #002d62;
     margin-bottom: 1rem;
 }
 
-.academic-advisory .subtitle, .awards .subtitle, .publications .subtitle, .ceamls-symposium .subtitle {
+.advisory-page .subtitle {
     font-size: 1.2rem;
     color: #ff7f50;
     margin-bottom: 2rem;
 }
 
-.academic-advisory .content, .ceamls-symposium .content {
-    text-align: left;
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #003d80;
-}
-
-.awards-list, .publications-list {
+.advisory-page .content-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
+    padding: 20px;
     text-align: left;
 }
 
-.award-item, .publication-item {
-    background-color: #ffffff;
-    border: 1px solid #e0e0e0;
+.advisory-page .content-card {
+    background: white;
+    padding: 20px;
     border-radius: 8px;
-    padding: 1rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
-.award-title, .publication-title {
+.advisory-page .card-icon {
+    font-size: 2em;
+    color: #457b9d;
+    margin-bottom: 10px;
+}
+
+.advisory-page .content-card h3 {
     font-size: 1.5rem;
     font-weight: bold;
     color: #002d62;
     margin-bottom: 0.5rem;
 }
 
-.award-description, .publication-details {
+.advisory-page .content-card p {
     font-size: 1rem;
     line-height: 1.6;
     color: #003d80;
 }
 
-.publication-link {
-    color: #ff7f50;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s;
-}
-
-.publication-link:hover {
-    color: #ffa366;
-}
-
-.ceamls-symposium .links {
-    margin-top: 1.5rem;
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.ceamls-symposium .symposium-link,
-.ceamls-symposium .ceamls-link {
-    display: inline-block;
-    background-color: #002d62;
-    color: #ffffff;
-    padding: 0.75rem 1.5rem;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s;
-}
-
-.ceamls-symposium .symposium-link:hover,
-.ceamls-symposium .ceamls-link:hover {
-    background-color: #004a9f;
-}
-
 /* Responsive Styles */
 @media (max-width: 768px) {
-    .academic-advisory, .awards, .publications, .ceamls-symposium {
+    .advisory-page {
         padding: 1.5rem;
     }
 
-    .title {
+    .advisory-page .title {
         font-size: 1.5rem;
     }
     
-    .subtitle {
+    .advisory-page .subtitle {
         font-size: 1rem;
     }
     
-    .awards-list, .publications-list {
+    .advisory-page .content-grid {
         grid-template-columns: 1fr;
     }
 }
