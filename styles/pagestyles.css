@@ -56,29 +56,6 @@ body {
     margin-right: 0.5rem;
 }
 
-/* Navigation Styles */
-.nav-links {
-    display: flex;
-    list-style: none;
-    gap: 2rem;
-}
-
-.nav-link {
-    text-decoration: none;
-    color: var(--primary-color);
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
-
-.nav-link:hover {
-    color: var(--accent-color);
-}
-
-.nav-toggle,
-.nav-toggle-label {
-    display: none;
-}
-
 /* Banner Styles */
 .page-banner {
     position: relative;
