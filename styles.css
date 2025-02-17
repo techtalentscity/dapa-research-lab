@@ -36,7 +36,6 @@ body {
     text-align: center;
 }
 
-
 /* Header Styles */
 .main-header {
     display: flex;
@@ -140,6 +139,25 @@ body {
     /* Ensure body remains scrollable */
     body {
         overflow-y: auto;
+    }
+}
+
+.main-header .logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo-image {
+    height: 40px; /* Adjust this value based on your logo size */
+    width: auto;
+    object-fit: contain;
+}
+
+/* Responsive adjustment for logo */
+@media (max-width: 768px) {
+    .logo-image {
+        height: 32px; /* Slightly smaller on mobile */
     }
 }
 
