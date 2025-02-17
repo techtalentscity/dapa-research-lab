@@ -11,6 +11,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Include header and footer
-    includeHTML('header', '/components/header.html');
-    includeHTML('footer', '/components/footer.html');
+    includeHTML('#header', '/components/header.html');
+    includeHTML('#footer', '/components/footer.html');
 });
