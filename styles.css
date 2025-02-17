@@ -41,9 +41,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #1a2b47;
+    background-color: #ffffff; /* Changed from #1a2b47 to white */
     padding: 1rem 2rem;
-    color: white;
+    color: #002d62; /* Changed from white to navy blue */
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -66,7 +66,7 @@ body {
 }
 
 .nav-links li a {
-    color: white;
+    color: #002d62; /* Changed from white to navy blue */
     text-decoration: none;
     font-weight: 500;
     padding: 0.5rem 1rem;
@@ -74,13 +74,13 @@ body {
 }
 
 .nav-links li a:hover {
-    color: lightblue;
+    color: #457b9d; /* Changed from lightblue to a darker blue */
 }
 
 /* Toggle Menu */
 .checkbtn {
     font-size: 30px;
-    color: white;
+    color: #002d62; /* Changed from white to navy blue */
     cursor: pointer;
     display: none;
 }
@@ -100,7 +100,7 @@ body {
         position: fixed;
         top: 0;
         right: -100%;
-        background-color: #1a2b47;
+        background-color: #ffffff; /* Changed from #1a2b47 to white */
         width: 75%;
         height: 100vh;
         flex-direction: column;
