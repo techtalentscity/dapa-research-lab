@@ -1,32 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="DEPA Lab - AI-powered University Academic Advisory System">
-    <title>DEPA - Academic Advisory System</title>
+    <title>DEPA Lab - [Page Name]</title>
     
     <!-- Fonts -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
-     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-
-     <!-- Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-   
-    <!-- General styles -->
-    <link rel="stylesheet" href="https://techtalentscity.github.io/dapa-research-lab/styles.css">
-
-    <!-- Pages styles -->
-    <link rel="stylesheet" href="https://techtalentscity.github.io/dapa-research-lab/styles/pagestyles.css">
-
-    <!-- jscripts -->
-    <script defer src="https://techtalentscity.github.io/dapa-research-lab/scripts.js"></script>
-    <script defer src="https://techtalentscity.github.io/dapa-research-lab/script/pages.js"></script>
-
-</head>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     
+    <!-- Styles - Note the ../ to go up one directory -->
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../styles/pagestyles.css">
+    
+    <!-- Load components script first -->
+    <script src="../script/include.js"></script>
+    <!-- Other scripts -->
+    <script defer src="../scripts.js"></script>
+</head>
+
+<!-- Header -->
+
 <body>
+    <div id="header-container"></div>
 
     <!-- Header Section --> 
     
@@ -99,12 +94,8 @@
     </div>
 </section>
 </main>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>© 2025 DEPA Research Lab. All rights reserved.</p>
-        </div>
-    </footer>
+    
+<!-- Footer -->
+   <div id="footer-container"></div>
 </body>
 </html>
