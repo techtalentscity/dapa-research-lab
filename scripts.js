@@ -171,7 +171,7 @@ document.addEventListener("DOMContentLoaded", () => {
         {
             name: "Anjolie Anthony",
             role: "Researcher",
-            image: "images/Tasmeer_Alam.jpeg"
+            image: "images/Anjolie.JPG"
         },
         {
             name: "David Nyarko",
