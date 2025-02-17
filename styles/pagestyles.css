@@ -13,7 +13,7 @@
     position: relative;
     height: 400px;
     background: linear-gradient(rgba(0, 45, 98, 0.8), rgba(0, 45, 98, 0.8)),
-                url('/api/placeholder/1200/400') center/cover;
+                url('https://techtalentscity.github.io/dapa-research-lab/images/banners/llm.jpeg') center/cover;
     display: flex;
     align-items: center;
     justify-content: center;
