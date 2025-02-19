@@ -159,11 +159,6 @@ document.addEventListener("DOMContentLoaded", () => {
             image: "images/Emmanuel Masa-ibi.jpeg"
         },
         {
-            name: "Ekata Dhital",
-            role: "Research Assistant",
-            image: "images/Ekata Dhital.JPG"
-        },
-        {
             name: "Awotwi Baffoe",
             role: "Research Assistant",
             image: "images/Awotwi_Baffoe.jpg"
@@ -176,23 +171,13 @@ document.addEventListener("DOMContentLoaded", () => {
         {
             name: "Anjolie Anthony",
             role: "Researcher",
-            image: "images/Tasmeer_Alam.jpeg"
-        },
-        {
-            name: "Kelechi Nwachukwu",
-            role: "Researcher",
-            image: "images/Tasmeer_Alam.jpeg"
+            image: "images/Anjolie.JPG"
         },
         {
             name: "David Nyarko",
             role: "Research Assistant",
-            image: "images/Tasmeer_Alam.jpeg"
+            image: "images/david-nyarko.JPG"
         },
-        {
-            name: "Chukwuemeka Duru",
-            role: "Research Assistant",
-            image: "images/Tasmeer_Alam.jpeg"
-        }
     ];
 
     // Populate the Team Carousel
